@@ -1881,3 +1881,7 @@ width: 99%;
 .navbar .navbar-brand  .material-icons{
 	height: 27px;
 }
+
+.my-popover-content {
+    display:none;
+}
