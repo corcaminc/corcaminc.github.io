@@ -163,7 +163,7 @@ p {
 
 .navStyle ul li a {
     display: block;
-    font-size: 13px;
+    font-size: 18px;
     color: #222222;
     font-family: 'Raleway', sans-serif;
     text-decoration: none;
@@ -1873,10 +1873,11 @@ width: 99%;
 }
 .navbar .navbar-brand {
     position: relative;
-    /* height: 60px; */
-    line-height: 30px;
+    height: 60px; 
+    line-height: 50px;
     color: #fff;
     font-family: 'Raleway', sans-serif;
+    min-height: 80px;
 }
 .navbar .navbar-brand  .material-icons{
 	height: 27px;
