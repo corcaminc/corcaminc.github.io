@@ -4,9 +4,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Corcam Civic | Government Technology, AI and Modernization</title>
-<meta name="description" content="Corcam Solutions helps cities, counties, school districts, state and federal agencies modernize legacy systems, launch accessible resident services, and adopt AI responsibly. Woman-owned, based in Frisco, Texas.">
+<meta name="description" content="Corcam Solutions helps cities, counties, school districts, state and federal agencies modernize legacy systems, launch accessible public-facing services, and adopt AI responsibly. Woman-owned, based in Frisco, Texas.">
 <meta property="og:title" content="Corcam Civic | Government Technology, AI and Modernization">
-<meta property="og:description" content="Modern, accessible, AI-ready public services. Legacy modernization, resident portals, agentic AI with guardrails, and cybersecurity for every level of government.">
+<meta property="og:description" content="Modern, accessible, AI-ready public services. Legacy modernization, citizen portals, AI queue management, agentic AI with guardrails, and cybersecurity for every level of government.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://corcaminc.com/civic/">
 <link rel="canonical" href="https://corcaminc.com/civic/">
@@ -246,6 +246,43 @@ footer{background:var(--bg2);border-top:.5px solid var(--b1);padding:1.75rem 4re
 .fright a:hover{color:var(--tx)}
 @media (max-width:960px){footer{padding:1.5rem}}
 
+/* Queue spotlight */
+.qs{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start}
+@media (max-width:960px){.qs{grid-template-columns:1fr;gap:2.5rem}}
+.journey{list-style:none;counter-reset:j;display:flex;flex-direction:column;gap:1px;background:var(--b1);border:.5px solid var(--b1);margin-top:2rem}
+.journey li{background:var(--bg);padding:1.1rem 1.4rem 1.1rem 4rem;position:relative;font-size:.88rem;color:var(--mu);line-height:1.7}
+.journey li::before{counter-increment:j;content:counter(j,decimal-leading-zero);position:absolute;left:1.4rem;top:1.05rem;font-family:'Syne',sans-serif;font-weight:800;color:var(--accent)}
+.journey li b{display:block;color:var(--tx);font-weight:500;font-size:.92rem}
+.board{background:var(--bg3);border:.5px solid var(--b2);border-radius:3px;overflow:hidden}
+.board-hd{display:flex;justify-content:space-between;align-items:center;gap:1rem;padding:1rem 1.4rem;border-bottom:.5px solid var(--b1);flex-wrap:wrap}
+.board-hd h3{font-size:.95rem;font-weight:700}
+.board-hd span{font-size:.62rem;letter-spacing:.16em;text-transform:uppercase;color:var(--mu)}
+.live{display:inline-flex;align-items:center;gap:.4rem;color:var(--teal-tx)!important}
+.live::before{content:'';width:7px;height:7px;border-radius:50%;background:var(--teal);animation:pd 2s ease-in-out infinite}
+@keyframes pd{0%,100%{opacity:.35}50%{opacity:1}}
+.board table{width:100%;border-collapse:collapse;font-size:.85rem}
+.board th,.board td{text-align:left;padding:.8rem 1.4rem;border-bottom:.5px solid var(--b1)}
+.board th{font-size:.62rem;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--mu)}
+.board td{color:var(--tx)}
+.bar{height:6px;background:var(--b1);border-radius:3px;overflow:hidden;min-width:70px}
+.bar i{display:block;height:100%;background:var(--accent)}
+.bar i.hi{background:var(--orange)}
+.bar i.ok{background:var(--teal)}
+.agent-note{display:flex;gap:.9rem;padding:1.1rem 1.4rem;background:var(--adv);border-top:.5px solid rgba(200,169,110,.25)}
+.agent-note svg{flex:0 0 18px;margin-top:3px}
+.agent-note p{font-size:.85rem;color:var(--mu);line-height:1.7}
+.agent-note b{color:var(--tx);font-weight:500}
+.agent-acts{display:flex;gap:.5rem;margin-top:.7rem;flex-wrap:wrap}
+.chip{font-family:'Syne',sans-serif;font-size:.62rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:.35rem .8rem;border-radius:2px;border:.5px solid var(--b2);color:var(--mu)}
+.chip.go{background:var(--accent);border-color:var(--accent);color:#0a0a0b}
+@media (max-width:560px){.board th:nth-child(4),.board td:nth-child(4){display:none}.board th,.board td{padding:.75rem 1rem}}
+.illus{font-size:.72rem;color:var(--mu);padding:.7rem 1.4rem;border-top:.5px solid var(--b1)}
+.where{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:1.75rem}
+
+/* Delivery network */
+.net-stats{display:flex;gap:2.5rem;flex-wrap:wrap;margin:0 0 3rem;padding-bottom:2.5rem;border-bottom:.5px solid var(--b1)}
+.net-stats .hstat-num{font-size:1.9rem}
+
 /* Print: doubles as a capability statement */
 @media print{
   :root,[data-theme]{--bg:#fff;--bg2:#fff;--bg3:#fff;--adv:#fff;--tx:#000;--mu:#333;--acc-tx:#6b4f1a;--b1:#ccc;--b2:#bbb}
@@ -310,6 +347,7 @@ footer{background:var(--bg2);border-top:.5px solid var(--b1);padding:1.75rem 4re
   <ul class="nav-links" id="navLinks">
     <li><a href="#solutions">Solutions</a></li>
     <li><a href="#ai">Responsible AI</a></li>
+    <li><a href="#queues">Queues</a></li>
     <li><a href="#modernize">Modernization</a></li>
     <li><a href="#demo">Demo</a></li>
     <li><a href="#compliance">Compliance</a></li>
@@ -335,7 +373,7 @@ footer{background:var(--bg2);border-top:.5px solid var(--b1);padding:1.75rem 4re
   <div class="hero-left">
     <p class="hero-eyebrow">Public Sector &nbsp;&middot;&nbsp; Est. 2009 &nbsp;&middot;&nbsp; Frisco, Texas</p>
     <h1 id="heroT">Modern.<br>Accessible.<br><em>AI-ready.</em></h1>
-    <p class="hero-sub">Corcam helps cities, counties, school districts, state and federal agencies modernize legacy systems, launch resident services people actually like using, and put AI to work with the accountability the public expects.</p>
+    <p class="hero-sub">Corcam helps cities, counties, school districts, state and federal agencies modernize legacy systems, launch services citizens actually like using, shorten the lines at the front counter, and put AI to work with the accountability the public expects.</p>
     <div class="hero-actions">
       <a class="btn-p" href="demo.html">Explore the Live Demo</a>
       <a class="btn-g" href="#contracting">Contracting Info</a>
@@ -350,7 +388,7 @@ footer{background:var(--bg2);border-top:.5px solid var(--b1);padding:1.75rem 4re
 
   <div class="hero-right">
     <svg class="hero-art" viewBox="0 0 480 420" role="img" aria-labelledby="artT">
-      <title id="artT">Diagram: federal, state, county, city and school district systems connected through a secure API gateway to one AI-assisted resident experience</title>
+      <title id="artT">Diagram: federal, state, county, city and school district systems connected through a secure API gateway to one AI-assisted front door for citizens and businesses</title>
       <g font-family="DM Sans, sans-serif" font-size="13" font-weight="500">
         <rect class="a-box" x="10" y="20" width="150" height="54" rx="3" stroke-width=".8"/>
         <rect class="a-box" x="10" y="96" width="150" height="54" rx="3" stroke-width=".8"/>
@@ -371,8 +409,8 @@ footer{background:var(--bg2);border-top:.5px solid var(--b1);padding:1.75rem 4re
         <text class="a-goldtx" x="298" y="213" text-anchor="middle" font-family="Syne, sans-serif" font-weight="800" font-size="12" letter-spacing="1.5">GATEWAY</text>
         <path d="M346 200 H 378" class="a-line" stroke-width="2"/>
         <circle class="a-gold" cx="420" cy="200" r="44"/>
-        <text x="420" y="196" text-anchor="middle" fill="#0a0a0b" font-family="Syne, sans-serif" font-weight="800" font-size="13">One</text>
-        <text x="420" y="213" text-anchor="middle" fill="#0a0a0b" font-family="Syne, sans-serif" font-weight="800" font-size="13">resident</text>
+        <text x="420" y="196" text-anchor="middle" fill="#0a0a0b" font-family="Syne, sans-serif" font-weight="800" font-size="13">One front</text>
+        <text x="420" y="213" text-anchor="middle" fill="#0a0a0b" font-family="Syne, sans-serif" font-weight="800" font-size="13">door</text>
         <rect class="a-box" x="256" y="276" width="214" height="66" rx="3" style="stroke:var(--teal)"/>
         <circle cx="278" cy="299" r="5" fill="#3dcca8"/>
         <text class="a-tx" x="292" y="303" font-family="Syne, sans-serif" font-weight="700" font-size="12.5">AI agent, human-approved</text>
@@ -389,8 +427,8 @@ footer{background:var(--bg2);border-top:.5px solid var(--b1);padding:1.75rem 4re
 
 <div class="mq-wrap" aria-hidden="true">
   <div class="mq-track">
-    <span class="mq-item">Resident Portals</span><span class="mq-dot">&#9670;</span><span class="mq-item">Agentic AI</span><span class="mq-dot">&#9670;</span><span class="mq-item">Legacy Modernization</span><span class="mq-dot">&#9670;</span><span class="mq-item">Cybersecurity</span><span class="mq-dot">&#9670;</span><span class="mq-item">Cloud &amp; Data Center</span><span class="mq-dot">&#9670;</span><span class="mq-item">ERP &amp; Architecture</span><span class="mq-dot">&#9670;</span><span class="mq-item">Section 508</span><span class="mq-dot">&#9670;</span><span class="mq-item">TX-RAMP</span><span class="mq-dot">&#9670;</span>
-    <span class="mq-item">Resident Portals</span><span class="mq-dot">&#9670;</span><span class="mq-item">Agentic AI</span><span class="mq-dot">&#9670;</span><span class="mq-item">Legacy Modernization</span><span class="mq-dot">&#9670;</span><span class="mq-item">Cybersecurity</span><span class="mq-dot">&#9670;</span><span class="mq-item">Cloud &amp; Data Center</span><span class="mq-dot">&#9670;</span><span class="mq-item">ERP &amp; Architecture</span><span class="mq-dot">&#9670;</span><span class="mq-item">Section 508</span><span class="mq-dot">&#9670;</span><span class="mq-item">TX-RAMP</span><span class="mq-dot">&#9670;</span>
+    <span class="mq-item">Citizen Portals</span><span class="mq-dot">&#9670;</span><span class="mq-item">AI Queue Management</span><span class="mq-dot">&#9670;</span><span class="mq-item">Agentic AI</span><span class="mq-dot">&#9670;</span><span class="mq-item">Legacy Modernization</span><span class="mq-dot">&#9670;</span><span class="mq-item">Cybersecurity</span><span class="mq-dot">&#9670;</span><span class="mq-item">Cloud &amp; Data Center</span><span class="mq-dot">&#9670;</span><span class="mq-item">ERP &amp; Architecture</span><span class="mq-dot">&#9670;</span><span class="mq-item">Section 508</span><span class="mq-dot">&#9670;</span><span class="mq-item">TX-RAMP</span><span class="mq-dot">&#9670;</span>
+    <span class="mq-item">Citizen Portals</span><span class="mq-dot">&#9670;</span><span class="mq-item">AI Queue Management</span><span class="mq-dot">&#9670;</span><span class="mq-item">Agentic AI</span><span class="mq-dot">&#9670;</span><span class="mq-item">Legacy Modernization</span><span class="mq-dot">&#9670;</span><span class="mq-item">Cybersecurity</span><span class="mq-dot">&#9670;</span><span class="mq-item">Cloud &amp; Data Center</span><span class="mq-dot">&#9670;</span><span class="mq-item">ERP &amp; Architecture</span><span class="mq-dot">&#9670;</span><span class="mq-item">Section 508</span><span class="mq-dot">&#9670;</span><span class="mq-item">TX-RAMP</span><span class="mq-dot">&#9670;</span>
   </div>
 </div>
 
@@ -400,13 +438,13 @@ footer{background:var(--bg2);border-top:.5px solid var(--b1);padding:1.75rem 4re
     <div class="head rv">
       <p class="slabel">Who We Serve</p>
       <h2 class="stitle" id="serveT">Every level of government. <span>One integrated approach.</span></h2>
-      <p class="sbody">Residents do not think in jurisdictions. We design services that work across them, while respecting each agency's systems, data ownership and procurement rules.</p>
+      <p class="sbody">Citizens and businesses do not think in jurisdictions. We design services that work across them, while respecting each agency's systems, data ownership and procurement rules.</p>
     </div>
     <div class="hgrid g5 rv d1">
-      <div><h3>Cities</h3><ul class="ticks"><li>Resident portals and 311</li><li>Permits, licensing, payments</li><li>Utility billing integration</li></ul></div>
-      <div><h3>Counties</h3><ul class="ticks"><li>Property and records modernization</li><li>Courts and justice data sharing</li><li>Elections IT readiness</li></ul></div>
+      <div><h3>Cities</h3><ul class="ticks"><li>Online services and 311</li><li>Permits, licensing, payments</li><li>Utility billing integration</li></ul></div>
+      <div><h3>Counties</h3><ul class="ticks"><li>Tax office and records modernization</li><li>Courts and justice data sharing</li><li>Elections IT readiness</li></ul></div>
       <div><h3>School districts</h3><ul class="ticks"><li>Enrollment and family portals</li><li>Student data privacy (FERPA)</li><li>Classroom AI policy and training</li></ul></div>
-      <div><h3>State agencies</h3><ul class="ticks"><li>Eligibility and benefits systems</li><li>ERP and budget analytics</li><li>Statewide AI governance</li></ul></div>
+      <div><h3>State agencies</h3><ul class="ticks"><li>DMV, licensing and benefits systems</li><li>ERP and budget analytics</li><li>Statewide AI governance</li></ul></div>
       <div><h3>Federal</h3><ul class="ticks"><li>Cloud and data center strategy</li><li>Legacy application modernization</li><li>Teaming and subcontracting</li></ul></div>
     </div>
   </div>
@@ -421,9 +459,9 @@ footer{background:var(--bg2);border-top:.5px solid var(--b1);padding:1.75rem 4re
       <p class="sbody">We combine enterprise architecture discipline with the practical realities of public budgets, aging systems and small IT teams.</p>
     </div>
     <div class="hgrid g4 rv d1">
-      <article><svg class="ico" viewBox="0 0 44 44" fill="none" aria-hidden="true"><rect x="7" y="9" width="30" height="21" rx="2" stroke="#3dcca8" stroke-width="1.2"/><path d="M7 15H37M16 36H28M22 30V36" stroke="#3dcca8" stroke-width="1.2" stroke-linecap="round"/></svg><h3>Resident Portals &amp; Websites</h3><p>Accessible, mobile-first websites and single sign-on portals that bring services from multiple agencies into one place.</p><span class="stag">Fewer calls, faster service</span></article>
+      <article><svg class="ico" viewBox="0 0 44 44" fill="none" aria-hidden="true"><rect x="7" y="9" width="30" height="21" rx="2" stroke="#3dcca8" stroke-width="1.2"/><path d="M7 15H37M16 36H28M22 30V36" stroke="#3dcca8" stroke-width="1.2" stroke-linecap="round"/></svg><h3>Citizen Portals &amp; Websites</h3><p>Accessible, mobile-first websites and single sign-on portals that bring services from multiple agencies into one place.</p><span class="stag">Fewer calls, faster service</span></article>
       <article><svg class="ico" viewBox="0 0 44 44" fill="none" aria-hidden="true"><rect x="11" y="6" width="22" height="32" rx="2" stroke="#3dcca8" stroke-width="1.2"/><path d="M16 14H28M16 20H28M16 26H23" stroke="#3dcca8" stroke-width="1.2" stroke-linecap="round"/><path d="M24 31L27 34L33 28" stroke="#c8a96e" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg><h3>Digital Forms, Permits &amp; Payments</h3><p>Turn paper and PDF processes into guided online workflows with status tracking, e-signature and secure payments.</p><span class="stag">Shorter processing times</span></article>
-      <article><svg class="ico" viewBox="0 0 44 44" fill="none" aria-hidden="true"><circle cx="22" cy="22" r="6" stroke="#3dcca8" stroke-width="1.2"/><path d="M22 8V12M22 32V36M8 22H12M32 22H36" stroke="#3dcca8" stroke-width="1.2" stroke-linecap="round"/><path d="M13.2 13.2L16 16M28 28L30.8 30.8M13.2 30.8L16 28M28 16L30.8 13.2" stroke="#3dcca8" stroke-width="1.2" stroke-linecap="round"/></svg><h3>AI Assistants &amp; Agentic Workflows</h3><p>Resident-facing assistants and staff copilots that prefill forms, route cases and draft responses, always with human approval.</p><span class="stag">Staff time back for complex cases</span></article>
+      <article><svg class="ico" viewBox="0 0 44 44" fill="none" aria-hidden="true"><circle cx="22" cy="22" r="6" stroke="#3dcca8" stroke-width="1.2"/><path d="M22 8V12M22 32V36M8 22H12M32 22H36" stroke="#3dcca8" stroke-width="1.2" stroke-linecap="round"/><path d="M13.2 13.2L16 16M28 28L30.8 30.8M13.2 30.8L16 28M28 16L30.8 13.2" stroke="#3dcca8" stroke-width="1.2" stroke-linecap="round"/></svg><h3>AI Assistants &amp; Agentic Workflows</h3><p>Public-facing assistants and staff copilots that prefill forms, route cases and draft responses, always with human approval.</p><span class="stag">Staff time back for complex cases</span></article>
       <article><svg class="ico" viewBox="0 0 44 44" fill="none" aria-hidden="true"><rect x="6" y="6" width="14" height="14" rx="1.5" stroke="#c8a96e" stroke-width="1.2"/><rect x="24" y="24" width="14" height="14" rx="1.5" stroke="#3dcca8" stroke-width="1.2"/><path d="M20 13H27A4 4 0 0131 17V24" stroke="#3dcca8" stroke-width="1.2" stroke-linecap="round"/></svg><h3>Legacy Modernization &amp; Integration</h3><p>Connect mainframe, AS/400 and SOAP systems to modern channels through secure APIs, then retire them on your schedule.</p><span class="stag">Lower risk than rip-and-replace</span></article>
       <article><svg class="ico" viewBox="0 0 44 44" fill="none" aria-hidden="true"><path d="M9 36V22M18 36V12M27 36V26M36 36V16M6 36H38" stroke="#3dcca8" stroke-width="1.2" stroke-linecap="round"/></svg><h3>Data, Budget &amp; Transparency</h3><p>Budget analysis, performance dashboards and open data portals that help leaders decide and help the public see results.</p><span class="stag">Decisions backed by data</span></article>
       <article><svg class="ico" viewBox="0 0 44 44" fill="none" aria-hidden="true"><path d="M22 6L36 12V22C36 30 30 36 22 38C14 36 8 30 8 22V12Z" stroke="#3dcca8" stroke-width="1.2" stroke-linejoin="round"/><path d="M16 22L20 26L28 18" stroke="#c8a96e" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg><h3>Cybersecurity &amp; Data Governance</h3><p>Security assessments, ransomware readiness and recovery planning, identity and access, and data classification policy.</p><span class="stag">Resilience against attacks</span></article>
@@ -443,11 +481,12 @@ footer{background:var(--bg2);border-top:.5px solid var(--b1);padding:1.75rem 4re
     </div>
     <div class="ai-grid">
       <div class="uses rv d1">
-        <div class="use"><span class="n">01</span><div><h3>Resident assistants</h3><p>Answer questions in plain language and multiple languages, then guide residents through forms and prefill what the government already knows.</p></div></div>
-        <div class="use"><span class="n">02</span><div><h3>Caseworker copilots</h3><p>Summarize case files, flag missing documents and draft correspondence, so staff spend time on judgment rather than data entry.</p></div></div>
-        <div class="use"><span class="n">03</span><div><h3>Public records request triage</h3><p>Classify, search and redact large document sets for public information requests, with every redaction reviewable.</p></div></div>
-        <div class="use"><span class="n">04</span><div><h3>Policy, budget and procurement analysis</h3><p>Compare budget scenarios, analyze contracts and draft RFP language from approved templates.</p></div></div>
-        <div class="use"><span class="n">05</span><div><h3>AI readiness and workforce training</h3><p>AI use policies, risk assessments and hands-on staff training that make adoption safe and practical.</p></div></div>
+        <div class="use"><span class="n">01</span><div><h3>Front-counter queue management</h3><p>Predict wait times, route visitors to the right window, pre-check documents before they arrive and text them when it is their turn.</p></div></div>
+        <div class="use"><span class="n">02</span><div><h3>Constituent assistants</h3><p>Answer questions in plain language and multiple languages, around the clock, then guide people through forms and prefill what the government already knows.</p></div></div>
+        <div class="use"><span class="n">03</span><div><h3>Caseworker copilots</h3><p>Summarize case files, flag missing documents and draft correspondence, so staff spend time on judgment rather than data entry.</p></div></div>
+        <div class="use"><span class="n">04</span><div><h3>Public records request triage</h3><p>Classify, search and redact large document sets for public information requests, with every redaction reviewable.</p></div></div>
+        <div class="use"><span class="n">05</span><div><h3>Policy, budget and procurement analysis</h3><p>Compare budget scenarios, analyze contracts and draft RFP language from approved templates.</p></div></div>
+        <div class="use"><span class="n">06</span><div><h3>AI readiness and workforce training</h3><p>AI use policies, risk assessments and hands-on staff training that make adoption safe and practical.</p></div></div>
       </div>
       <div class="guard rv d2">
         <h3>Our AI guardrails</h3>
@@ -456,11 +495,57 @@ footer{background:var(--bg2);border-top:.5px solid var(--b1);padding:1.75rem 4re
           <li><svg viewBox="0 0 20 20" fill="none" stroke="#3dcca8" stroke-width="1.8" aria-hidden="true"><path d="M4 10l4 4 8-8"/></svg><span><b>Human in the loop.</b> AI never submits, approves, denies or pays anything without a person's decision.</span></li>
           <li><svg viewBox="0 0 20 20" fill="none" stroke="#3dcca8" stroke-width="1.8" aria-hidden="true"><path d="M4 10l4 4 8-8"/></svg><span><b>Least privilege.</b> Read-only access by default, with every permission tied to a stated purpose.</span></li>
           <li><svg viewBox="0 0 20 20" fill="none" stroke="#3dcca8" stroke-width="1.8" aria-hidden="true"><path d="M4 10l4 4 8-8"/></svg><span><b>Full audit trail.</b> Every prompt, data access and action is logged for oversight and public records.</span></li>
-          <li><svg viewBox="0 0 20 20" fill="none" stroke="#3dcca8" stroke-width="1.8" aria-hidden="true"><path d="M4 10l4 4 8-8"/></svg><span><b>Clear disclosure.</b> Residents always know when they are interacting with AI, in line with the Texas Responsible AI Governance Act (HB 149).</span></li>
-          <li><svg viewBox="0 0 20 20" fill="none" stroke="#3dcca8" stroke-width="1.8" aria-hidden="true"><path d="M4 10l4 4 8-8"/></svg><span><b>Your data stays yours.</b> Private model deployments in authorized clouds, and no training on resident data.</span></li>
+          <li><svg viewBox="0 0 20 20" fill="none" stroke="#3dcca8" stroke-width="1.8" aria-hidden="true"><path d="M4 10l4 4 8-8"/></svg><span><b>Clear disclosure.</b> The public always knows when they are interacting with AI, in line with the Texas Responsible AI Governance Act (HB 149).</span></li>
+          <li><svg viewBox="0 0 20 20" fill="none" stroke="#3dcca8" stroke-width="1.8" aria-hidden="true"><path d="M4 10l4 4 8-8"/></svg><span><b>Your data stays yours.</b> Private model deployments in authorized clouds, and no training on constituent data.</span></li>
           <li><svg viewBox="0 0 20 20" fill="none" stroke="#3dcca8" stroke-width="1.8" aria-hidden="true"><path d="M4 10l4 4 8-8"/></svg><span><b>Measured risk.</b> Use cases assessed against the NIST AI Risk Management Framework before launch.</span></li>
         </ul>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- QUEUE SPOTLIGHT -->
+<section id="queues" aria-labelledby="qT">
+  <div class="in qs">
+    <div class="rv">
+      <p class="slabel">Spotlight &nbsp;&middot;&nbsp; AI Queue Management</p>
+      <h2 class="stitle" id="qT">Shorter lines at the DMV, <span>tax office and courthouse.</span></h2>
+      <p class="sbody">Long waits at vehicle registration, driver license, property tax and court counters are among the most visible frustrations people have with government. AI can cut the wait without adding staff, while keeping every decision with your team.</p>
+      <ol class="journey">
+        <li><b>Book or check in from anywhere</b>Online appointments, walk-in check-in by text or QR code, and a live estimated wait time.</li>
+        <li><b>Arrive with the right documents</b>An AI assistant confirms the visit reason and checks required documents, so fewer trips end in "come back with proof of insurance."</li>
+        <li><b>Skip the trip entirely</b>Simple tasks such as renewals and address changes are routed online before the visitor ever leaves home.</li>
+        <li><b>Right window, right time</b>Visitors are routed to the correct counter and texted when it is their turn, so they can wait in their car or nearby.</li>
+        <li><b>Staff where demand will be</b>Forecasts by hour, day and season help supervisors open windows and plan shifts before lines form.</li>
+      </ol>
+      <div class="where" aria-label="Where this applies">
+        <span class="pill">County tax-assessor collector</span><span class="pill">Driver license offices</span><span class="pill">Courts &amp; clerks</span><span class="pill">Permit centers</span><span class="pill">Benefits offices</span>
+      </div>
+    </div>
+
+    <div class="board rv d2" role="img" aria-labelledby="boardT boardD">
+      <div class="board-hd">
+        <h3 id="boardT">County Tax Office &nbsp;&middot;&nbsp; Main Branch</h3>
+        <span class="live">Live queue</span>
+      </div>
+      <p id="boardD" class="sr-only">Illustrative queue dashboard. Vehicle registration has 34 waiting with a 41 minute predicted wait, title transfers 12 waiting with 18 minutes, property tax 6 waiting with 7 minutes, and online renewals deflected 58 visits today. The AI assistant recommends opening window 6 for registration, which would reduce the wait to about 22 minutes, pending supervisor approval.</p>
+      <table aria-hidden="true">
+        <thead><tr><th>Service</th><th>Waiting</th><th>Predicted wait</th><th>Load</th></tr></thead>
+        <tbody>
+          <tr><td>Vehicle registration</td><td>34</td><td>41 min</td><td><div class="bar"><i class="hi" style="width:88%"></i></div></td></tr>
+          <tr><td>Title transfer</td><td>12</td><td>18 min</td><td><div class="bar"><i style="width:52%"></i></div></td></tr>
+          <tr><td>Property tax</td><td>6</td><td>7 min</td><td><div class="bar"><i class="ok" style="width:22%"></i></div></td></tr>
+          <tr><td>Sent online instead</td><td>58</td><td>0 min</td><td><div class="bar"><i class="ok" style="width:100%"></i></div></td></tr>
+        </tbody>
+      </table>
+      <div class="agent-note" aria-hidden="true">
+        <svg viewBox="0 0 20 20" fill="none" stroke="#3dcca8" stroke-width="1.6"><circle cx="10" cy="10" r="3"/><path d="M10 2v3M10 15v3M2 10h3M15 10h3"/></svg>
+        <div>
+          <p><b>AI recommendation:</b> Registration demand is 40% above forecast. Opening window 6 for the next 90 minutes should bring the wait down to about 22 minutes. 9 visitors in line can renew online and have been sent a link.</p>
+          <div class="agent-acts"><span class="chip go">Supervisor approves</span><span class="chip">Adjust</span><span class="chip">Dismiss</span></div>
+        </div>
+      </div>
+      <p class="illus" aria-hidden="true">Illustrative example. Figures are for demonstration only.</p>
     </div>
   </div>
 </section>
@@ -475,8 +560,8 @@ footer{background:var(--bg2);border-top:.5px solid var(--b1);padding:1.75rem 4re
     </div>
     <div class="hgrid g3 rv d1">
       <div><span class="kicker">Step 01</span><h3 style="font-size:1.4rem;font-weight:800">Wrap</h3><p style="margin-bottom:1.25rem">Expose legacy data and transactions through a secure API gateway, without changing the core system.</p><ul class="ticks"><li>System and data inventory</li><li>SOAP to REST and mainframe adapters</li><li>Identity federation and monitoring</li></ul></div>
-      <div><span class="kicker">Step 02</span><h3 style="font-size:1.4rem;font-weight:800">Extend</h3><p style="margin-bottom:1.25rem">Build modern resident and staff experiences, and AI assistants, on top of those APIs.</p><ul class="ticks"><li>Portals, mobile and chat channels</li><li>Event queues for outage resilience</li><li>Quick wins in 90 days</li></ul></div>
-      <div><span class="kicker">Step 03</span><h3 style="font-size:1.4rem;font-weight:800">Replace</h3><p style="margin-bottom:1.25rem">Retire legacy components one at a time, behind stable interfaces residents never notice.</p><ul class="ticks"><li>Cloud-native or SaaS replacement</li><li>Data migration and validation</li><li>Vendor-neutral selection support</li></ul></div>
+      <div><span class="kicker">Step 02</span><h3 style="font-size:1.4rem;font-weight:800">Extend</h3><p style="margin-bottom:1.25rem">Build modern public-facing and staff experiences, and AI assistants, on top of those APIs.</p><ul class="ticks"><li>Portals, mobile and chat channels</li><li>Event queues for outage resilience</li><li>Quick wins in 90 days</li></ul></div>
+      <div><span class="kicker">Step 03</span><h3 style="font-size:1.4rem;font-weight:800">Replace</h3><p style="margin-bottom:1.25rem">Retire legacy components one at a time, behind stable interfaces the public never notices.</p><ul class="ticks"><li>Cloud-native or SaaS replacement</li><li>Data migration and validation</li><li>Vendor-neutral selection support</li></ul></div>
     </div>
     <div class="pills rv d2" aria-label="Legacy platforms we integrate">
       <span class="pill">IBM z/OS · CICS · COBOL</span><span class="pill">IBM i / AS/400</span><span class="pill">Oracle &amp; SQL Server</span><span class="pill">SOAP / XML services</span><span class="pill">SAP · Oracle · Workday · Tyler ERP</span><span class="pill">Batch &amp; flat-file interfaces</span>
@@ -489,12 +574,12 @@ footer{background:var(--bg2);border-top:.5px solid var(--b1);padding:1.75rem 4re
   <div class="in demo">
     <div class="rv">
       <p class="slabel">See It in Action</p>
-      <h2 class="stitle" id="demoT">A unified resident portal, <span>working today.</span></h2>
-      <p class="sbody">Our concept portal shows how one secure sign-in can connect city, county, school district, state and federal services, with an AI assistant that completes tasks only with the resident's approval.</p>
+      <h2 class="stitle" id="demoT">A unified citizen portal, <span>working today.</span></h2>
+      <p class="sbody">Our concept portal shows how one secure sign-in can connect city, county, school district, state and federal services, with an AI assistant that completes tasks only with the user's approval.</p>
       <ul class="ticks">
         <li>Cross-agency request tracking in one view</li>
         <li>Agentic AI plan with approval steps and legacy system tags</li>
-        <li>Resident consent center and live system status</li>
+        <li>Consent center and live system status</li>
         <li>Keyboard and screen-reader accessible, mobile-first</li>
       </ul>
       <a class="btn-p" href="demo.html">Open the Live Demo</a>
@@ -550,6 +635,31 @@ footer{background:var(--bg2);border-top:.5px solid var(--b1);padding:1.75rem 4re
       <div class="acard"><div class="acard-n">2009</div><h3>Founded</h3><p>A Texas-based firm that understands Texas government and procurement.</p></div>
       <div class="acard"><div class="acard-n">US</div><h3>Patented architecture</h3><p>US patent for inflight Wi-Fi network architecture, built at Gogo.</p></div>
       <div class="acard"><div class="acard-n">0</div><h3>Vendor lock-in</h3><p>Vendor-neutral advice. We recommend what fits, not what we resell.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- DELIVERY NETWORK -->
+<section id="network" aria-labelledby="netT">
+  <div class="in">
+    <div class="head rv">
+      <p class="slabel">Delivery Network</p>
+      <h2 class="stitle" id="netT">Senior leadership up front. <span>Scalable delivery behind it.</span></h2>
+      <p class="sbody">Corcam leads every engagement directly and draws on a vetted network of delivery partners in the United States and abroad, so we can staff a small pilot or a multi-year program with the right specialists.</p>
+    </div>
+    <div class="hgrid g3 rv d1">
+      <div><svg class="ico" viewBox="0 0 44 44" fill="none" aria-hidden="true"><path d="M22 6L36 12V22C36 30 30 36 22 38C14 36 8 30 8 22V12Z" stroke="#c8a96e" stroke-width="1.2" stroke-linejoin="round"/><path d="M16 22L20 26L28 18" stroke="#3dcca8" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <h3>U.S. delivery partners</h3>
+        <p style="margin-bottom:1.1rem">Texas-based and nationwide firms for on-site work and anything that touches sensitive or regulated data.</p>
+        <ul class="ticks"><li>On-site implementation and training</li><li>Background-checked staff for sensitive systems</li><li>Local and HUB-certified subcontractors where required</li></ul></div>
+      <div><svg class="ico" viewBox="0 0 44 44" fill="none" aria-hidden="true"><circle cx="22" cy="22" r="15" stroke="#3dcca8" stroke-width="1.2"/><path d="M7 22H37M22 7C26 11 28 16 28 22S26 33 22 37C18 33 16 28 16 22S18 11 22 7Z" stroke="#3dcca8" stroke-width="1.2"/></svg>
+        <h3>Global delivery centers</h3>
+        <p style="margin-bottom:1.1rem">Nearshore and offshore partners for scale and around-the-clock coverage on work that contracts allow.</p>
+        <ul class="ticks"><li>Application development and testing</li><li>Legacy code analysis and data migration</li><li>Follow-the-sun support and monitoring</li></ul></div>
+      <div><svg class="ico" viewBox="0 0 44 44" fill="none" aria-hidden="true"><rect x="8" y="8" width="12" height="12" rx="1.5" stroke="#c8a96e" stroke-width="1.2"/><rect x="24" y="8" width="12" height="12" rx="1.5" stroke="#3dcca8" stroke-width="1.2"/><rect x="8" y="24" width="12" height="12" rx="1.5" stroke="#3dcca8" stroke-width="1.2"/><rect x="24" y="24" width="12" height="12" rx="1.5" stroke="#3dcca8" stroke-width="1.2"/></svg>
+        <h3>One accountable prime</h3>
+        <p style="margin-bottom:1.1rem">You get a single point of accountability, with Corcam leadership owning quality, security and outcomes across every partner.</p>
+        <ul class="ticks"><li>Data residency set by your contract terms</li><li>Partner security and compliance vetting</li><li>Unified governance and status reporting</li></ul></div>
     </div>
   </div>
 </section>
@@ -625,7 +735,8 @@ footer{background:var(--bg2);border-top:.5px solid var(--b1);padding:1.75rem 4re
         <label for="inq">Topic</label>
         <select id="inq" name="inquiry">
           <option value="Public Sector: General briefing">General briefing</option>
-          <option value="Public Sector: Resident portal / website">Resident portal or website</option>
+          <option value="Public Sector: Citizen portal / website">Citizen portal or website</option>
+          <option value="Public Sector: AI queue management">AI queue management (DMV, tax office, courts)</option>
           <option value="Public Sector: AI assistants / agentic AI">AI assistants and agentic AI</option>
           <option value="Public Sector: Legacy modernization">Legacy modernization</option>
           <option value="Public Sector: Cybersecurity">Cybersecurity and data governance</option>
