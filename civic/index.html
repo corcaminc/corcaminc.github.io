@@ -4,9 +4,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Corcam Civic | Government Technology, AI and Modernization</title>
-<meta name="description" content="Corcam Solutions helps cities, counties, school districts, state and federal agencies modernize legacy systems, launch accessible public-facing services, and adopt AI responsibly. Woman-owned, based in Frisco, Texas.">
+<meta name="description" content="Corcam Solutions helps cities, counties, school districts, state and federal agencies recover toll and fee revenue, modernize legacy systems, launch accessible public-facing services, and adopt AI responsibly. Woman-owned, based in Frisco, Texas.">
 <meta property="og:title" content="Corcam Civic | Government Technology, AI and Modernization">
-<meta property="og:description" content="Modern, accessible, AI-ready public services. Legacy modernization, citizen portals, AI queue management, agentic AI with guardrails, and cybersecurity for every level of government.">
+<meta property="og:description" content="Modern, accessible, AI-ready public services. Toll revenue recovery, AI queue management, legacy modernization, citizen portals, agentic AI with guardrails, and cybersecurity for every level of government.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://corcaminc.com/civic/">
 <link rel="canonical" href="https://corcaminc.com/civic/">
@@ -246,6 +246,45 @@ footer{background:var(--bg2);border-top:.5px solid var(--b1);padding:1.75rem 4re
 .fright a:hover{color:var(--tx)}
 @media (max-width:960px){footer{padding:1.5rem}}
 
+/* Featured link in hero */
+.feature-link{display:inline-flex;align-items:center;gap:.7rem;margin-top:1.5rem;font-size:.88rem;color:var(--tx);text-decoration:none;border:.5px solid rgba(200,169,110,.4);border-radius:2px;padding:.5rem .9rem .5rem .5rem;transition:border-color .2s,background .2s}
+.feature-link:hover{border-color:var(--accent);background:var(--pill-bg)}
+.fl-tag{font-family:'Syne',sans-serif;font-size:.6rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;background:var(--accent);color:#0a0a0b;padding:.2rem .5rem;border-radius:2px}
+
+/* Toll recovery */
+.toll-top{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:end;margin-bottom:3rem}
+@media (max-width:960px){.toll-top{grid-template-columns:1fr;gap:1.5rem}}
+.leak{border:.5px solid var(--b1);border-radius:3px;overflow:hidden}
+.leak-row{display:grid;grid-template-columns:200px 1fr 1fr 1.1fr;gap:1.5rem;align-items:center;padding:1.15rem 1.5rem;border-bottom:.5px solid var(--b1);background:var(--bg)}
+.leak-row:last-child{border-bottom:0}
+.leak-hd{background:var(--bg2);padding-top:.8rem;padding-bottom:.8rem}
+.leak-hd span{font-size:.62rem;font-weight:500;letter-spacing:.16em;text-transform:uppercase;color:var(--mu)}
+.leak-stage{font-family:'Syne',sans-serif;font-weight:700;font-size:.92rem;color:var(--tx)}
+.leak-stage small{display:block;font-family:'DM Sans',sans-serif;font-weight:400;font-size:.75rem;color:var(--mu);letter-spacing:.02em}
+.flowbar{height:10px;background:var(--b1);border-radius:2px;overflow:hidden;display:flex}
+.flowbar i{display:block;height:100%;background:var(--accent)}
+.flowbar b{display:block;height:100%;background:var(--orange);opacity:.85}
+.leak-why{font-size:.84rem;color:var(--mu);line-height:1.6}
+.leak-fix{font-size:.84rem;color:var(--tx);line-height:1.6;display:flex;gap:.6rem}
+.leak-fix::before{content:'';flex:0 0 8px;height:8px;margin-top:.5em;border-radius:50%;background:var(--teal)}
+.legend{display:flex;gap:1.5rem;flex-wrap:wrap;margin-top:1rem;font-size:.75rem;color:var(--mu)}
+.legend span{display:inline-flex;align-items:center;gap:.45rem}
+.legend i{width:12px;height:8px;border-radius:1px;display:inline-block}
+@media (max-width:900px){
+  .leak-row{grid-template-columns:1fr;gap:.6rem}
+  .leak-hd{display:none}
+}
+.toll-out{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--b1);border:.5px solid var(--b1);margin-top:2.5rem}
+.toll-out > div{background:var(--bg2);padding:1.6rem 1.75rem}
+.toll-out h3{font-size:.95rem;font-weight:700;margin-bottom:.35rem}
+.toll-out p{font-size:.84rem;color:var(--mu);line-height:1.7}
+@media (max-width:960px){.toll-out{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:560px){.toll-out{grid-template-columns:1fr}}
+.fair{margin-top:2rem;display:flex;gap:1rem;align-items:flex-start;background:var(--adv);border:.5px solid rgba(200,169,110,.25);border-left:2px solid var(--accent);border-radius:3px;padding:1.4rem 1.6rem}
+.fair svg{flex:0 0 22px;margin-top:2px}
+.fair p{font-size:.9rem;color:var(--mu);line-height:1.75}
+.fair b{color:var(--tx);font-weight:500}
+
 /* Queue spotlight */
 .qs{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start}
 @media (max-width:960px){.qs{grid-template-columns:1fr;gap:2.5rem}}
@@ -345,11 +384,10 @@ footer{background:var(--bg2);border-top:.5px solid var(--b1);padding:1.75rem 4re
     <span class="nav-tag">Public Sector</span>
   </a>
   <ul class="nav-links" id="navLinks">
-    <li><a href="#solutions">Solutions</a></li>
-    <li><a href="#ai">Responsible AI</a></li>
+    <li><a href="#tolling">Toll Recovery</a></li>
     <li><a href="#queues">Queues</a></li>
-    <li><a href="#modernize">Modernization</a></li>
-    <li><a href="#demo">Demo</a></li>
+    <li><a href="#ai">Responsible AI</a></li>
+    <li><a href="#solutions">Solutions</a></li>
     <li><a href="#compliance">Compliance</a></li>
     <li><a href="#contracting">Contracting</a></li>
   </ul>
@@ -373,36 +411,38 @@ footer{background:var(--bg2);border-top:.5px solid var(--b1);padding:1.75rem 4re
   <div class="hero-left">
     <p class="hero-eyebrow">Public Sector &nbsp;&middot;&nbsp; Est. 2009 &nbsp;&middot;&nbsp; Frisco, Texas</p>
     <h1 id="heroT">Modern.<br>Accessible.<br><em>AI-ready.</em></h1>
-    <p class="hero-sub">Corcam helps cities, counties, school districts, state and federal agencies modernize legacy systems, launch services citizens actually like using, shorten the lines at the front counter, and put AI to work with the accountability the public expects.</p>
+    <p class="hero-sub">Corcam helps cities, counties, toll and transit authorities, school districts, state and federal agencies recover lost revenue, shorten the lines at the front counter, modernize legacy systems, and put AI to work with the accountability the public expects.</p>
     <div class="hero-actions">
       <a class="btn-p" href="demo.html">Explore the Live Demo</a>
       <a class="btn-g" href="#contracting">Contracting Info</a>
     </div>
+    <a class="feature-link" href="#tolling"><span class="fl-tag">Featured</span>AI for toll revenue recovery<span aria-hidden="true">&rarr;</span></a>
     <div class="hero-stats">
       <div><div class="hstat-num">30<sup>+</sup></div><div class="hstat-label">Years in technology</div></div>
-      <div><div class="hstat-num">5</div><div class="hstat-label">Levels of government</div></div>
+      <div><div class="hstat-num">6</div><div class="hstat-label">Public sector markets</div></div>
       <div><div class="hstat-num">1</div><div class="hstat-label">US Patent</div></div>
       <div><div class="hstat-num">2009</div><div class="hstat-label">Founded</div></div>
     </div>
   </div>
 
   <div class="hero-right">
-    <svg class="hero-art" viewBox="0 0 480 420" role="img" aria-labelledby="artT">
-      <title id="artT">Diagram: federal, state, county, city and school district systems connected through a secure API gateway to one AI-assisted front door for citizens and businesses</title>
+    <svg class="hero-art" viewBox="0 0 480 460" role="img" aria-labelledby="artT">
+      <title id="artT">Diagram: federal, state, county, city, school district and toll authority systems connected through a secure API gateway to one AI-assisted front door for citizens and businesses</title>
       <g font-family="DM Sans, sans-serif" font-size="13" font-weight="500">
         <rect class="a-box" x="10" y="20" width="150" height="54" rx="3" stroke-width=".8"/>
         <rect class="a-box" x="10" y="96" width="150" height="54" rx="3" stroke-width=".8"/>
         <rect class="a-box" x="10" y="172" width="150" height="54" rx="3" stroke-width=".8"/>
         <rect class="a-box" x="10" y="248" width="150" height="54" rx="3" stroke-width=".8"/>
         <rect class="a-box" x="10" y="324" width="150" height="54" rx="3" stroke-width=".8"/>
+        <rect class="a-box" x="10" y="400" width="150" height="54" rx="3" stroke-width=".8"/>
         <g class="a-tx" font-family="Syne, sans-serif" font-weight="700">
-          <text x="28" y="43">Federal</text><text x="28" y="119">State</text><text x="28" y="195">County</text><text x="28" y="271">City</text><text x="28" y="347">School district</text>
+          <text x="28" y="43">Federal</text><text x="28" y="119">State</text><text x="28" y="195">County</text><text x="28" y="271">City</text><text x="28" y="347">School district</text><text x="28" y="423">Toll authority</text>
         </g>
         <g class="a-mu" font-size="11" font-weight="400">
-          <text x="28" y="61">Partner APIs · FedRAMP</text><text x="28" y="137">SOAP · eligibility</text><text x="28" y="213">Mainframe · CICS</text><text x="28" y="289">IBM i · billing</text><text x="28" y="365">Student info system</text>
+          <text x="28" y="61">Partner APIs · FedRAMP</text><text x="28" y="137">SOAP · eligibility</text><text x="28" y="213">Mainframe · CICS</text><text x="28" y="289">IBM i · billing</text><text x="28" y="365">Student info system</text><text x="28" y="441">Image review · back office</text>
         </g>
         <g class="a-line flow" stroke-width="1.4" opacity=".8">
-          <path d="M160 47 C 210 47, 210 200, 250 200"/><path d="M160 123 C 205 123, 205 200, 250 200"/><path d="M160 199 L 250 200"/><path d="M160 275 C 205 275, 205 200, 250 200"/><path d="M160 351 C 210 351, 210 200, 250 200"/>
+          <path d="M160 47 C 210 47, 210 200, 250 200"/><path d="M160 123 C 205 123, 205 200, 250 200"/><path d="M160 199 L 250 200"/><path d="M160 275 C 205 275, 205 200, 250 200"/><path d="M160 351 C 210 351, 210 200, 250 200"/><path d="M160 427 C 215 427, 215 200, 250 200"/>
         </g>
         <rect class="a-box" x="250" y="162" width="96" height="76" rx="3" style="stroke:var(--accent)"/>
         <text class="a-goldtx" x="298" y="196" text-anchor="middle" font-family="Syne, sans-serif" font-weight="800" font-size="12" letter-spacing="1.5">API</text>
@@ -427,20 +467,83 @@ footer{background:var(--bg2);border-top:.5px solid var(--b1);padding:1.75rem 4re
 
 <div class="mq-wrap" aria-hidden="true">
   <div class="mq-track">
-    <span class="mq-item">Citizen Portals</span><span class="mq-dot">&#9670;</span><span class="mq-item">AI Queue Management</span><span class="mq-dot">&#9670;</span><span class="mq-item">Agentic AI</span><span class="mq-dot">&#9670;</span><span class="mq-item">Legacy Modernization</span><span class="mq-dot">&#9670;</span><span class="mq-item">Cybersecurity</span><span class="mq-dot">&#9670;</span><span class="mq-item">Cloud &amp; Data Center</span><span class="mq-dot">&#9670;</span><span class="mq-item">ERP &amp; Architecture</span><span class="mq-dot">&#9670;</span><span class="mq-item">Section 508</span><span class="mq-dot">&#9670;</span><span class="mq-item">TX-RAMP</span><span class="mq-dot">&#9670;</span>
-    <span class="mq-item">Citizen Portals</span><span class="mq-dot">&#9670;</span><span class="mq-item">AI Queue Management</span><span class="mq-dot">&#9670;</span><span class="mq-item">Agentic AI</span><span class="mq-dot">&#9670;</span><span class="mq-item">Legacy Modernization</span><span class="mq-dot">&#9670;</span><span class="mq-item">Cybersecurity</span><span class="mq-dot">&#9670;</span><span class="mq-item">Cloud &amp; Data Center</span><span class="mq-dot">&#9670;</span><span class="mq-item">ERP &amp; Architecture</span><span class="mq-dot">&#9670;</span><span class="mq-item">Section 508</span><span class="mq-dot">&#9670;</span><span class="mq-item">TX-RAMP</span><span class="mq-dot">&#9670;</span>
+    <span class="mq-item">Toll Revenue Recovery</span><span class="mq-dot">&#9670;</span><span class="mq-item">Citizen Portals</span><span class="mq-dot">&#9670;</span><span class="mq-item">AI Queue Management</span><span class="mq-dot">&#9670;</span><span class="mq-item">Agentic AI</span><span class="mq-dot">&#9670;</span><span class="mq-item">Legacy Modernization</span><span class="mq-dot">&#9670;</span><span class="mq-item">Cybersecurity</span><span class="mq-dot">&#9670;</span><span class="mq-item">Cloud &amp; Data Center</span><span class="mq-dot">&#9670;</span><span class="mq-item">ERP &amp; Architecture</span><span class="mq-dot">&#9670;</span><span class="mq-item">Section 508</span><span class="mq-dot">&#9670;</span><span class="mq-item">TX-RAMP</span><span class="mq-dot">&#9670;</span>
+    <span class="mq-item">Toll Revenue Recovery</span><span class="mq-dot">&#9670;</span><span class="mq-item">Citizen Portals</span><span class="mq-dot">&#9670;</span><span class="mq-item">AI Queue Management</span><span class="mq-dot">&#9670;</span><span class="mq-item">Agentic AI</span><span class="mq-dot">&#9670;</span><span class="mq-item">Legacy Modernization</span><span class="mq-dot">&#9670;</span><span class="mq-item">Cybersecurity</span><span class="mq-dot">&#9670;</span><span class="mq-item">Cloud &amp; Data Center</span><span class="mq-dot">&#9670;</span><span class="mq-item">ERP &amp; Architecture</span><span class="mq-dot">&#9670;</span><span class="mq-item">Section 508</span><span class="mq-dot">&#9670;</span><span class="mq-item">TX-RAMP</span><span class="mq-dot">&#9670;</span>
   </div>
 </div>
+
+<!-- TOLL REVENUE RECOVERY -->
+<section id="tolling" aria-labelledby="tollT">
+  <div class="in">
+    <div class="toll-top">
+      <div class="rv">
+        <p class="slabel">Spotlight &nbsp;&middot;&nbsp; Toll &amp; Transit Authorities</p>
+        <h2 class="stitle" id="tollT" style="margin-bottom:0">Recover the toll revenue <span>that slips through the cracks.</span></h2>
+      </div>
+      <p class="sbody rv d1">Every unreadable plate, outdated address and unpaid pay-by-mail invoice is revenue that funds roads and pays down debt. We apply AI across the full toll lifecycle to find where revenue leaks, recover more of it, and do it fairly.</p>
+    </div>
+
+    <div class="leak rv d1" role="table" aria-label="Where toll revenue leaks and how AI helps recover it">
+      <div class="leak-row leak-hd" role="row">
+        <span role="columnheader">Lifecycle stage</span><span role="columnheader" aria-hidden="true">Revenue flow</span><span role="columnheader">Where it leaks</span><span role="columnheader">How AI recovers it</span>
+      </div>
+      <div class="leak-row" role="row">
+        <div class="leak-stage" role="cell">01 Capture<small>Roadside image</small></div>
+        <div class="flowbar" aria-hidden="true"><i style="width:94%"></i><b style="width:6%"></b></div>
+        <div class="leak-why" role="cell">Dirty, obstructed, paper or temporary plates rejected or misread</div>
+        <div class="leak-fix" role="cell">AI image review and vehicle fingerprinting (make, model, color) to match plates and shrink manual review queues</div>
+      </div>
+      <div class="leak-row" role="row">
+        <div class="leak-stage" role="cell">02 Identify<small>Owner and address</small></div>
+        <div class="flowbar" aria-hidden="true"><i style="width:86%"></i><b style="width:8%"></b></div>
+        <div class="leak-why" role="cell">Out-of-state plates, outdated registrations, returned mail, rental and fleet vehicles</div>
+        <div class="leak-fix" role="cell">Multi-source address resolution, interstate lookups and automated fleet and rental owner matching</div>
+      </div>
+      <div class="leak-row" role="row">
+        <div class="leak-stage" role="cell">03 Convert<small>Pay-by-mail to tag</small></div>
+        <div class="flowbar" aria-hidden="true"><i style="width:78%"></i><b style="width:8%"></b></div>
+        <div class="leak-why" role="cell">Higher cost to bill by mail and lower pay rates than tag accounts</div>
+        <div class="leak-fix" role="cell">Targeted outreach to convert frequent pay-by-mail drivers, text and email invoices, one-tap payment</div>
+      </div>
+      <div class="leak-row" role="row">
+        <div class="leak-stage" role="cell">04 Resolve<small>Disputes and service</small></div>
+        <div class="flowbar" aria-hidden="true"><i style="width:72%"></i><b style="width:6%"></b></div>
+        <div class="leak-why" role="cell">Call center backlogs, unresolved disputes and abandoned payments</div>
+        <div class="leak-fix" role="cell">24/7 AI assistant for balances, disputes and payment plans, with agents handling complex cases</div>
+      </div>
+      <div class="leak-row" role="row">
+        <div class="leak-stage" role="cell">05 Recover<small>Aging receivables</small></div>
+        <div class="flowbar" aria-hidden="true"><i style="width:66%"></i><b style="width:6%"></b></div>
+        <div class="leak-why" role="cell">Habitual violators, large fleet balances and debts nearing time limits</div>
+        <div class="leak-fix" role="cell">Predictive scoring to prioritize collectible accounts, separate hardship from habitual cases, and act before debts age out</div>
+      </div>
+    </div>
+    <div class="legend" aria-hidden="true"><span><i style="background:var(--accent)"></i>Revenue collected</span><span><i style="background:var(--orange)"></i>Revenue at risk</span><span>Illustrative flow, not actual data</span></div>
+
+    <div class="toll-out rv d2">
+      <div><h3>Leakage analytics</h3><p>One dashboard tracing every transaction from roadside image to collected dollar.</p></div>
+      <div><h3>Lower cost to collect</h3><p>Less manual image review, fewer mailed notices and fewer calls per dollar collected.</p></div>
+      <div><h3>Works with your systems</h3><p>Integrates with existing roadside, back-office and customer service platforms through secure APIs.</p></div>
+      <div><h3>Fast proof of value</h3><p>A 60 to 90 day pilot on historical data, measured against your current recovery rates.</p></div>
+    </div>
+
+    <div class="fair rv d2">
+      <svg viewBox="0 0 22 22" fill="none" stroke="#3dcca8" stroke-width="1.6" aria-hidden="true"><path d="M11 2l8 3.5V11c0 4.5-3.4 8-8 9-4.6-1-8-4.5-8-9V5.5z"/><path d="M7.5 11l2.5 2.5 4.5-4.5"/></svg>
+      <p><b>Firm on habitual violators, fair to everyone else.</b> AI prioritizes and recommends, while people decide on every penalty, escalation and dispute. Hardship options stay front and center, plate and account data stays protected, and every decision is logged for audit.</p>
+    </div>
+  </div>
+</section>
 
 <!-- WHO WE SERVE -->
 <section class="s2" aria-labelledby="serveT">
   <div class="in">
     <div class="head rv">
       <p class="slabel">Who We Serve</p>
-      <h2 class="stitle" id="serveT">Every level of government. <span>One integrated approach.</span></h2>
+      <h2 class="stitle" id="serveT">Every level of public service. <span>One integrated approach.</span></h2>
       <p class="sbody">Citizens and businesses do not think in jurisdictions. We design services that work across them, while respecting each agency's systems, data ownership and procurement rules.</p>
     </div>
-    <div class="hgrid g5 rv d1">
+    <div class="hgrid g3 rv d1">
+      <div><h3>Toll &amp; transit authorities</h3><ul class="ticks"><li>Toll revenue recovery and leakage analytics</li><li>Back-office and customer service modernization</li><li>Roadway and traffic data analytics</li></ul></div>
       <div><h3>Cities</h3><ul class="ticks"><li>Online services and 311</li><li>Permits, licensing, payments</li><li>Utility billing integration</li></ul></div>
       <div><h3>Counties</h3><ul class="ticks"><li>Tax office and records modernization</li><li>Courts and justice data sharing</li><li>Elections IT readiness</li></ul></div>
       <div><h3>School districts</h3><ul class="ticks"><li>Enrollment and family portals</li><li>Student data privacy (FERPA)</li><li>Classroom AI policy and training</li></ul></div>
@@ -736,6 +839,7 @@ footer{background:var(--bg2);border-top:.5px solid var(--b1);padding:1.75rem 4re
         <select id="inq" name="inquiry">
           <option value="Public Sector: General briefing">General briefing</option>
           <option value="Public Sector: Citizen portal / website">Citizen portal or website</option>
+          <option value="Public Sector: Toll revenue recovery">Toll revenue recovery</option>
           <option value="Public Sector: AI queue management">AI queue management (DMV, tax office, courts)</option>
           <option value="Public Sector: AI assistants / agentic AI">AI assistants and agentic AI</option>
           <option value="Public Sector: Legacy modernization">Legacy modernization</option>
