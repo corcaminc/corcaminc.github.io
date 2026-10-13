@@ -1,256 +1,268 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Corcam Civic | Government Technology, AI and Modernization</title>
-<meta name="description" content="Corcam Solutions helps cities, counties, school districts, state and federal agencies modernize legacy systems, launch accessible resident services, and adopt AI responsibly. Texas-based, woman-owned, founded 2009.">
+<meta name="description" content="Corcam Solutions helps cities, counties, school districts, state and federal agencies modernize legacy systems, launch accessible resident services, and adopt AI responsibly. Woman-owned, based in Frisco, Texas.">
 <meta property="og:title" content="Corcam Civic | Government Technology, AI and Modernization">
 <meta property="og:description" content="Modern, accessible, AI-ready public services. Legacy modernization, resident portals, agentic AI with guardrails, and cybersecurity for every level of government.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://corcaminc.com/civic/">
 <link rel="canonical" href="https://corcaminc.com/civic/">
 <link rel="icon" href="/favicon.ico">
+<script>try{document.documentElement.setAttribute('data-theme',localStorage.getItem('corcam-theme')||'dark')}catch(e){}</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
 <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
 <style>
-:root{
-  --navy:#0f1b2d;--navy2:#17263d;--navy3:#213452;
-  --gold:#c8a96e;--gold2:#e8c98e;--gold-tx:#7d5e22;
-  --teal:#3dcca8;--teal-tx:#0d6e59;
-  --ink:#16202e;--mu:#4f5b6b;--bg:#fbfaf7;--bg2:#f3f1ec;--card:#fff;--line:#e2ded5;
-  --focus:#ffbf47;--r:10px;--max:1180px;
-}
-*,*::before,*::after{box-sizing:border-box}
-html{scroll-behavior:smooth}
+/* Corcam design system (shared with corcaminc.com) */
+:root{--accent:#c8a96e;--accent2:#e8c98e;--teal:#3dcca8;--orange:#e88c5c;--tr:0.3s ease;--focus:#ffbf47}
+[data-theme="dark"]{--bg:#0a0a0b;--bg2:#111114;--bg3:#18181c;--b1:rgba(255,255,255,0.07);--b2:rgba(255,255,255,0.13);--tx:#f0ede8;--mu:#9a9a96;--nav:rgba(10,10,11,0.9);--inp:#18181c;--adv:#0f0d0a;--acc-tx:#c8a96e;--acc-hd:#c8a96e;--teal-tx:#3dcca8;--pill-bg:rgba(200,169,110,.12)}
+[data-theme="light"]{--bg:#f7f5f2;--bg2:#eeecea;--bg3:#e5e3e0;--b1:rgba(0,0,0,0.08);--b2:rgba(0,0,0,0.14);--tx:#1a1916;--mu:#5f5d59;--nav:rgba(247,245,242,0.93);--inp:#fff;--adv:#ede9e2;--acc-tx:#7d5e22;--acc-hd:#a07a33;--teal-tx:#0d6e59;--pill-bg:rgba(125,94,34,.1)}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:80px}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important;animation:none!important}}
-body{margin:0;background:var(--bg);color:var(--ink);font-family:'DM Sans',system-ui,sans-serif;font-size:1.0625rem;line-height:1.65}
-h1,h2,h3{font-family:'Syne',sans-serif;line-height:1.15;margin:0;letter-spacing:-.01em}
-p{margin:0}
-a{color:var(--gold-tx)}
-:focus-visible{outline:3px solid var(--focus);outline-offset:2px;border-radius:3px}
-.wrap{max-width:var(--max);margin:0 auto;padding:0 24px}
+body{background:var(--bg);color:var(--tx);font-family:'DM Sans',sans-serif;font-size:16px;line-height:1.7;overflow-x:hidden;transition:background var(--tr),color var(--tr)}
+h1,h2,h3,h4{font-family:'Syne',sans-serif}
+a{color:var(--acc-tx)}
+:focus-visible{outline:2px solid var(--focus);outline-offset:3px;border-radius:2px}
 .sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap}
-.skip{position:absolute;left:12px;top:-60px;background:var(--focus);color:#111;padding:10px 16px;font-weight:700;z-index:999;text-decoration:none;border-radius:0 0 6px 6px}
+.skip{position:absolute;left:12px;top:-60px;background:var(--accent);color:#0a0a0b;padding:10px 16px;font-weight:500;z-index:999;text-decoration:none;border-radius:0 0 2px 2px}
 .skip:focus{top:0}
+.in{max-width:1240px;margin:0 auto}
 
-/* Nav */
-header{position:sticky;top:0;z-index:100;background:rgba(15,27,45,.96);backdrop-filter:blur(12px);border-bottom:1px solid rgba(255,255,255,.08)}
-.nav{display:flex;align-items:center;gap:24px;height:68px}
-.logo{display:flex;align-items:center;gap:10px;text-decoration:none;color:#fff}
-.logo-text{font-family:'Syne',sans-serif;font-weight:700;letter-spacing:.03em;font-size:.98rem}
-.logo-text span{color:var(--gold)}
-.logo-tag{font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);border-left:1px solid rgba(255,255,255,.2);padding-left:10px;margin-left:2px}
-.nav ul{display:flex;gap:22px;list-style:none;margin:0 0 0 auto;padding:0}
-.nav ul a{color:#cfd6e2;text-decoration:none;font-size:.86rem;font-weight:500}
-.nav ul a:hover{color:#fff}
-.btn{display:inline-flex;align-items:center;gap:8px;font-family:'Syne',sans-serif;font-weight:700;font-size:.82rem;letter-spacing:.06em;text-transform:uppercase;text-decoration:none;padding:13px 22px;border-radius:4px;border:1.5px solid transparent;cursor:pointer;transition:background .2s,color .2s,border-color .2s}
-.btn-gold{background:var(--gold);color:#111}
-.btn-gold:hover{background:var(--gold2);color:#111}
-.btn-line{border-color:rgba(255,255,255,.35);color:#fff}
-.btn-line:hover{border-color:var(--gold);color:var(--gold2)}
-.btn-dark{background:var(--navy);color:#fff}
-.btn-dark:hover{background:var(--navy3);color:#fff}
-.nav .btn{padding:10px 16px;font-size:.74rem}
-.menu-btn{display:none;margin-left:auto;background:none;border:1px solid rgba(255,255,255,.3);color:#fff;border-radius:6px;padding:8px 12px;font:inherit;font-size:.85rem;cursor:pointer}
-@media (max-width:1020px){
-  .nav ul,.nav .btn{display:none}
+/* Nav (matches corcaminc.com) */
+nav{position:fixed;top:0;left:0;right:0;z-index:500;display:flex;align-items:center;justify-content:space-between;gap:1.5rem;padding:.9rem 4rem;background:var(--nav);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:.5px solid var(--b1);transition:background var(--tr)}
+.nav-logo{display:flex;align-items:center;gap:10px;text-decoration:none}
+.nav-logo svg{flex-shrink:0}
+.nav-logo-text{font-family:'Syne',sans-serif;font-size:.95rem;font-weight:700;letter-spacing:.04em;color:var(--tx);transition:color var(--tr);white-space:nowrap}
+.nav-logo-text span{color:var(--accent)}
+.nav-tag{font-size:.62rem;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);border-left:.5px solid var(--b2);padding-left:10px;white-space:nowrap}
+.nav-links{display:flex;gap:2rem;list-style:none}
+.nav-links a{font-size:.78rem;color:var(--mu);text-decoration:none;letter-spacing:.08em;text-transform:uppercase;transition:color .2s;white-space:nowrap}
+.nav-links a:hover{color:var(--tx)}
+.nav-right{display:flex;align-items:center;gap:1rem}
+.theme-toggle{width:44px;height:24px;background:var(--b2);border:.5px solid var(--b2);border-radius:12px;cursor:pointer;position:relative;transition:background .3s;flex-shrink:0;padding:0}
+.theme-toggle::after{content:'';position:absolute;top:4px;left:4px;width:14px;height:14px;border-radius:50%;background:var(--accent);transition:transform .3s}
+[data-theme="light"] .theme-toggle::after{transform:translateX(20px)}
+.t-moon,.t-sun{font-size:11px;position:absolute;top:50%;transform:translateY(-50%);pointer-events:none;line-height:1}
+.t-moon{left:5px}.t-sun{right:4px}
+.nav-cta{font-family:'Syne',sans-serif;font-size:.76rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#0a0a0b;background:var(--accent);border:none;padding:.55rem 1.3rem;border-radius:2px;cursor:pointer;text-decoration:none;transition:background .2s;white-space:nowrap}
+.nav-cta:hover{background:var(--accent2)}
+.menu-btn{display:none;background:transparent;border:.5px solid var(--b2);color:var(--tx);border-radius:2px;padding:.4rem .8rem;font-family:'Syne',sans-serif;font-size:.7rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;cursor:pointer}
+@media (max-width:1480px){.nav-links{gap:1.4rem}.nav-tag{display:none}}
+@media (max-width:1240px){nav{padding:.9rem 2rem}.nav-links{gap:1.1rem}.nav-links a{font-size:.72rem}}
+@media (max-width:1040px){
+  nav{padding:1rem 1.5rem;flex-wrap:wrap}
+  .nav-links{display:none;order:3;width:100%;flex-direction:column;gap:0;padding-top:.5rem}
+  nav.open .nav-links{display:flex}
+  .nav-links a{display:block;padding:.75rem 0;border-top:.5px solid var(--b1)}
   .menu-btn{display:block}
-  .logo-tag{display:none}
-  .nav.open{height:auto;flex-wrap:wrap;padding:14px 0}
-  .nav.open ul{display:flex;flex-direction:column;width:100%;gap:0;margin:8px 0 0}
-  .nav.open ul a{display:block;padding:10px 0;border-top:1px solid rgba(255,255,255,.08)}
-  .nav.open .btn{display:inline-flex;margin:6px 0 4px}
 }
+@media (max-width:520px){.nav-cta{display:none}}
+
+/* Buttons */
+.btn-p,.btn-g{font-family:'Syne',sans-serif;font-size:.8rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:.95rem 2.2rem;border-radius:2px;cursor:pointer;text-decoration:none;display:inline-block;transition:background .2s,color .2s,border-color .2s,transform .15s}
+.btn-p{color:#0a0a0b;background:var(--accent);border:none}
+.btn-p:hover{background:var(--accent2);transform:translateY(-2px)}
+.btn-g{color:var(--mu);background:transparent;border:.5px solid var(--b2)}
+.btn-g:hover{color:var(--tx);border-color:rgba(150,150,150,.5)}
 
 /* Hero */
-.hero{background:var(--navy);color:#fff;position:relative;overflow:hidden}
-.hero::before{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.04) 1px,transparent 1px);background-size:64px 64px;mask-image:radial-gradient(ellipse at 70% 40%,#000 20%,transparent 70%)}
-.hero-in{position:relative;display:grid;grid-template-columns:1.1fr .9fr;gap:48px;align-items:center;padding:84px 24px 72px}
-@media (max-width:900px){.hero-in{grid-template-columns:1fr;padding:56px 24px 48px}}
-.eyebrow{font-size:.74rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);display:flex;align-items:center;gap:12px;margin-bottom:20px}
-.eyebrow::before{content:"";width:28px;height:1px;background:var(--gold)}
-.hero h1{font-size:clamp(2.3rem,5vw,3.7rem);font-weight:800}
-.hero h1 em{font-style:normal;color:var(--gold)}
-.hero .lead{font-size:1.15rem;color:#cfd6e2;max-width:56ch;margin:22px 0 32px}
-.ctas{display:flex;gap:12px;flex-wrap:wrap}
-.trust-strip{display:flex;flex-wrap:wrap;gap:10px 22px;margin-top:40px;padding-top:24px;border-top:1px solid rgba(255,255,255,.12);font-size:.88rem;color:#cfd6e2}
-.trust-strip span{display:flex;align-items:center;gap:8px}
-.trust-strip svg{color:var(--gold);flex:0 0 16px}
-.hero-art{width:100%;height:auto}
+.hero{min-height:100vh;display:grid;grid-template-columns:1.05fr .95fr;align-items:center;padding:8rem 4rem 4rem;position:relative;overflow:hidden;gap:4rem}
+.hero-grid{position:absolute;inset:0;pointer-events:none;background-image:linear-gradient(var(--b1) 1px,transparent 1px),linear-gradient(90deg,var(--b1) 1px,transparent 1px);background-size:72px 72px;mask-image:radial-gradient(ellipse 80% 80% at 50% 50%,black 30%,transparent 100%);-webkit-mask-image:radial-gradient(ellipse 80% 80% at 50% 50%,black 30%,transparent 100%)}
+.hero-glow{position:absolute;top:-15%;left:30%;width:700px;height:600px;background:radial-gradient(ellipse,rgba(200,169,110,.09) 0%,transparent 65%);pointer-events:none}
+.hero-glow2{position:absolute;bottom:-20%;right:-5%;width:500px;height:500px;background:radial-gradient(ellipse,rgba(61,204,168,.05) 0%,transparent 65%);pointer-events:none}
+.hero-left,.hero-right{position:relative;z-index:2}
+.hero-eyebrow{font-size:.7rem;font-weight:500;letter-spacing:.22em;text-transform:uppercase;color:var(--acc-tx);margin-bottom:1.5rem;display:flex;align-items:center;gap:.9rem}
+.hero-eyebrow::before{content:'';display:block;width:28px;height:1px;background:var(--accent)}
+.hero h1{font-size:clamp(2.8rem,5vw,5.2rem);font-weight:800;line-height:.95;letter-spacing:-.025em;color:var(--tx);margin-bottom:1.75rem}
+.hero h1 em{font-style:normal;color:var(--acc-hd)}
+.hero-sub{font-size:1.05rem;font-weight:300;color:var(--mu);max-width:520px;line-height:1.85;margin-bottom:2.5rem}
+.hero-actions{display:flex;gap:1rem;flex-wrap:wrap}
+.hero-stats{display:flex;gap:2.25rem;margin-top:3.5rem;padding-top:2.5rem;border-top:.5px solid var(--b1);flex-wrap:wrap}
+.hstat-num{font-family:'Syne',sans-serif;font-size:1.9rem;font-weight:800;color:var(--tx);line-height:1}
+.hstat-num sup{color:var(--accent);font-size:.9rem;vertical-align:super}
+.hstat-label{font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;color:var(--mu);margin-top:.35rem}
+.hero-art{width:100%;max-width:520px;height:auto;display:block;margin:0 auto}
+.a-box{fill:var(--bg3);stroke:var(--b2)}
+.a-tx{fill:var(--tx)}
+.a-mu{fill:var(--mu)}
+.a-gold{fill:var(--accent)}
+.a-goldtx{fill:var(--acc-tx)}
+.a-line{stroke:var(--accent);fill:none}
+.a-teal{stroke:var(--teal)}
+.flow{stroke-dasharray:4 6;animation:flow 2.4s linear infinite}
+@keyframes flow{to{stroke-dashoffset:-20}}
+@media (max-width:1024px){.hero{grid-template-columns:1fr;padding:7rem 2rem 4rem;min-height:auto}.hero-right{max-width:520px}}
+
+/* Marquee */
+.mq-wrap{border-top:.5px solid var(--b1);border-bottom:.5px solid var(--b1);padding:.95rem 0;overflow:hidden;background:var(--bg2);transition:background var(--tr)}
+.mq-track{display:flex;gap:3rem;animation:mq 40s linear infinite;white-space:nowrap;width:max-content}
+.mq-item{font-size:.68rem;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:var(--mu);flex-shrink:0}
+.mq-dot{color:var(--accent)}
+@keyframes mq{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 
 /* Sections */
-section{padding:88px 0}
-section.alt{background:var(--bg2)}
-.slabel{font-size:.74rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--gold-tx);margin-bottom:12px}
-.stitle{font-size:clamp(1.8rem,3.4vw,2.6rem);font-weight:800;max-width:24ch}
-.sintro{color:var(--mu);font-size:1.1rem;max-width:64ch;margin-top:16px}
-.head{margin-bottom:44px}
+section{padding:7rem 4rem;transition:background var(--tr)}
+.s2{background:var(--bg2)}
+.s-adv{background:var(--adv);border-top:.5px solid rgba(200,169,110,.18);border-bottom:.5px solid rgba(200,169,110,.18);position:relative}
+.s-adv::before{content:'';position:absolute;top:0;left:0;width:3px;height:100%;background:var(--accent)}
+.slabel{font-size:.68rem;font-weight:500;letter-spacing:.22em;text-transform:uppercase;color:var(--acc-tx);margin-bottom:1.25rem;display:flex;align-items:center;gap:.75rem}
+.slabel::before{content:'';display:block;width:20px;height:1px;background:var(--accent)}
+.stitle{font-size:clamp(2rem,3.5vw,3.2rem);font-weight:800;line-height:1.06;letter-spacing:-.02em;color:var(--tx);max-width:660px;margin-bottom:1.5rem}
+.stitle span{color:var(--acc-hd)}
+.sbody{font-size:.975rem;color:var(--mu);max-width:620px;line-height:1.85}
+.head{margin-bottom:3.5rem}
+@media (max-width:960px){section{padding:5rem 1.5rem}}
 
-/* Serve grid */
-.serve{display:grid;grid-template-columns:repeat(5,1fr);gap:14px}
-@media (max-width:1020px){.serve{grid-template-columns:repeat(2,1fr)}}
-@media (max-width:520px){.serve{grid-template-columns:1fr}}
-.serve-card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:22px;border-top:4px solid var(--gold)}
-.serve-card h3{font-size:1.08rem;margin-bottom:10px}
-.serve-card ul{margin:0;padding-left:18px;color:var(--mu);font-size:.93rem}
-.serve-card li{margin:4px 0}
+.rv{opacity:0;transform:translateY(24px);transition:opacity .65s ease,transform .65s ease}
+.rv.on{opacity:1;transform:translateY(0)}
+.d1{transition-delay:.12s}.d2{transition-delay:.24s}.d3{transition-delay:.36s}
+@media (prefers-reduced-motion:reduce){.rv{opacity:1;transform:none}}
 
-/* Solutions */
-.sol{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
-@media (max-width:1020px){.sol{grid-template-columns:repeat(2,1fr)}}
-@media (max-width:560px){.sol{grid-template-columns:1fr}}
-.sol-card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:26px;display:flex;flex-direction:column;gap:12px;transition:border-color .2s,transform .2s}
-.sol-card:hover{border-color:var(--gold);transform:translateY(-3px)}
-.sol-ico{width:46px;height:46px;border-radius:10px;background:var(--navy);display:grid;place-items:center}
-.sol-card h3{font-size:1.1rem}
-.sol-card p{color:var(--mu);font-size:.95rem}
-.sol-card .out{margin-top:auto;font-size:.84rem;font-weight:600;color:var(--teal-tx);padding-top:8px;border-top:1px dashed var(--line)}
+/* Hairline grids (same pattern as main services grid) */
+.hgrid{display:grid;gap:1px;background:var(--b1);border:.5px solid var(--b1)}
+.hgrid > *{background:var(--bg);padding:2.25rem;transition:background .3s}
+.s2 .hgrid > *{background:var(--bg2)}
+.hgrid > *:hover{background:var(--bg3)}
+.g5{grid-template-columns:repeat(5,1fr)}
+.g4{grid-template-columns:repeat(4,1fr)}
+.g3{grid-template-columns:repeat(3,1fr)}
+@media (max-width:1100px){.g5{grid-template-columns:repeat(3,1fr)}.g4{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:860px){.g3{grid-template-columns:1fr}}
+@media (max-width:640px){.g5,.g4{grid-template-columns:1fr}}
+.hgrid h3{font-size:.975rem;font-weight:700;color:var(--tx);margin-bottom:.7rem}
+.hgrid p{font-size:.875rem;color:var(--mu);line-height:1.8}
+.ico{width:44px;height:44px;margin-bottom:1.4rem;display:block}
+.ticks{list-style:none;display:flex;flex-direction:column;gap:.5rem}
+.ticks li{font-size:.86rem;color:var(--mu);display:flex;gap:.7rem;line-height:1.6}
+.ticks li::before{content:'';width:14px;height:1px;background:var(--accent);flex-shrink:0;margin-top:.8em}
+.ticks li b{color:var(--tx);font-weight:500}
+.stag{display:inline-block;margin-top:1.25rem;font-size:.65rem;font-weight:500;letter-spacing:.14em;text-transform:uppercase;padding:.3rem .7rem;border-radius:2px;color:var(--teal-tx);background:rgba(61,204,168,.1)}
+.kicker{font-size:.68rem;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:var(--acc-tx);display:block;margin-bottom:.6rem}
 
-/* AI section */
-.ai{background:var(--navy);color:#fff}
-.ai .slabel{color:var(--gold)}
-.ai .sintro{color:#cfd6e2}
-.ai-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start}
-@media (max-width:900px){.ai-grid{grid-template-columns:1fr}}
-.uses{display:grid;gap:12px}
-.use{background:var(--navy2);border:1px solid rgba(255,255,255,.08);border-radius:var(--r);padding:18px 20px;display:flex;gap:16px}
-.use .n{font-family:'Syne',sans-serif;font-weight:800;color:var(--gold);font-size:1.1rem;flex:0 0 28px}
-.use h3{font-size:1rem;margin-bottom:4px}
-.use p{color:#b9c3d3;font-size:.92rem}
-.guard{background:var(--navy2);border:1px solid rgba(200,169,110,.35);border-radius:14px;padding:28px}
-.guard h3{font-size:1.25rem;margin-bottom:6px}
-.guard > p{color:#b9c3d3;font-size:.95rem;margin-bottom:18px}
-.guard ul{list-style:none;margin:0;padding:0;display:grid;gap:14px}
-.guard li{display:flex;gap:12px;font-size:.95rem;color:#e3e8f0}
-.guard li svg{flex:0 0 20px;margin-top:3px}
-.guard li b{color:#fff}
+/* AI */
+.ai-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:4rem;align-items:start}
+@media (max-width:960px){.ai-grid{grid-template-columns:1fr;gap:2.5rem}}
+.uses{display:flex;flex-direction:column;gap:1px;background:var(--b1);border:.5px solid var(--b1)}
+.use{background:var(--adv);padding:1.5rem 1.75rem;display:flex;gap:1.25rem;transition:background .3s}
+.use:hover{background:var(--bg3)}
+.use .n{font-family:'Syne',sans-serif;font-weight:800;color:var(--accent);font-size:1.1rem;flex:0 0 28px}
+.use h3{font-size:.95rem;font-weight:700;margin-bottom:.3rem}
+.use p{font-size:.86rem;color:var(--mu);line-height:1.75}
+.guard{background:var(--bg3);border:.5px solid rgba(200,169,110,.3);border-left:2px solid var(--accent);border-radius:3px;padding:2.25rem}
+.guard h3{font-size:1.2rem;font-weight:800;margin-bottom:.4rem}
+.guard > p{font-size:.88rem;color:var(--mu);margin-bottom:1.5rem}
+.guard ul{list-style:none;display:flex;flex-direction:column;gap:1rem}
+.guard li{display:flex;gap:.85rem;font-size:.9rem;color:var(--mu);line-height:1.7}
+.guard li svg{flex:0 0 18px;margin-top:4px}
+.guard li b{color:var(--tx);font-weight:500}
 
-/* Modernization */
-.mod{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border:1px solid var(--line);border-radius:14px;overflow:hidden;background:var(--card)}
-@media (max-width:860px){.mod{grid-template-columns:1fr}}
-.mod-step{padding:30px;position:relative;border-right:1px solid var(--line)}
-.mod-step:last-child{border-right:0}
-@media (max-width:860px){.mod-step{border-right:0;border-bottom:1px solid var(--line)}.mod-step:last-child{border-bottom:0}}
-.mod-step .k{font-size:.74rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--gold-tx)}
-.mod-step h3{font-size:1.4rem;margin:8px 0 10px}
-.mod-step p{color:var(--mu);font-size:.95rem}
-.mod-step ul{margin:14px 0 0;padding-left:18px;color:var(--ink);font-size:.92rem}
-.mod-step li{margin:4px 0}
-.systems{display:flex;flex-wrap:wrap;gap:8px;margin-top:28px}
-.systems span{background:var(--card);border:1px solid var(--line);border-radius:999px;padding:6px 14px;font-size:.86rem;color:var(--mu)}
+/* Systems pills */
+.pills{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:2rem}
+.pill{font-size:.68rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;padding:.4rem .9rem;border-radius:2px;border:.5px solid rgba(200,169,110,.35);color:var(--acc-tx)}
 
 /* Demo */
-.demo{display:grid;grid-template-columns:.9fr 1.1fr;gap:48px;align-items:center}
-@media (max-width:900px){.demo{grid-template-columns:1fr}}
-.demo ul{margin:22px 0 28px;padding:0;list-style:none;display:grid;gap:10px}
-.demo li{display:flex;gap:10px;color:var(--ink)}
-.demo li svg{flex:0 0 20px;margin-top:4px}
-.frame{border-radius:14px;overflow:hidden;border:1px solid var(--line);box-shadow:0 20px 60px rgba(15,27,45,.18);background:#fff}
-.frame-bar{display:flex;align-items:center;gap:6px;padding:10px 14px;background:#eef0f3;border-bottom:1px solid var(--line)}
-.frame-bar i{width:10px;height:10px;border-radius:50%;background:#c9cdd4}
-.frame-bar span{margin-left:10px;font-size:.78rem;color:var(--mu);background:#fff;border-radius:6px;padding:3px 10px}
+.demo{display:grid;grid-template-columns:.9fr 1.1fr;gap:4rem;align-items:center}
+@media (max-width:960px){.demo{grid-template-columns:1fr;gap:2.5rem}}
+.demo .ticks{margin:1.75rem 0 2.25rem}
+.frame{border-radius:3px;overflow:hidden;border:.5px solid var(--b2);box-shadow:0 24px 70px rgba(0,0,0,.35);background:#fff}
+.frame-bar{display:flex;align-items:center;gap:6px;padding:10px 14px;background:var(--bg3);border-bottom:.5px solid var(--b1)}
+.frame-bar i{width:9px;height:9px;border-radius:50%;background:var(--b2)}
+.frame-bar span{margin-left:10px;font-size:.72rem;letter-spacing:.04em;color:var(--mu)}
 .frame-view{position:relative;height:420px;overflow:hidden}
 .frame-view iframe{position:absolute;top:0;left:0;width:200%;height:200%;border:0;transform:scale(.5);transform-origin:0 0;pointer-events:none}
-@media (max-width:560px){.frame-view{height:320px}}
+@media (max-width:560px){.frame-view{height:300px}}
+.note{margin-top:1.5rem;font-size:.8rem;color:var(--mu)}
 
-/* Compliance */
-.comp{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-@media (max-width:900px){.comp{grid-template-columns:1fr}}
-.comp-card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:24px}
-.comp-card h3{font-size:1.05rem;margin-bottom:12px;display:flex;gap:10px;align-items:center}
-.comp-card ul{margin:0;padding:0;list-style:none;display:grid;gap:8px}
-.comp-card li{font-size:.93rem;color:var(--mu);padding-left:16px;position:relative}
-.comp-card li::before{content:"";position:absolute;left:0;top:.62em;width:7px;height:7px;border-radius:50%;background:var(--gold)}
-.comp-card li b{color:var(--ink)}
-.note{margin-top:18px;font-size:.88rem;color:var(--mu)}
+/* Why (stat cards like main About) */
+.acards{display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem}
+@media (max-width:960px){.acards{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:520px){.acards{grid-template-columns:1fr}}
+.acard{background:var(--bg3);border:.5px solid var(--b1);border-left:2px solid var(--accent);border-radius:3px;padding:1.75rem 2rem;transition:border-left-color .3s,background var(--tr)}
+.acard:hover{border-left-color:var(--accent2)}
+.acard-n{font-family:'Syne',sans-serif;font-size:2.4rem;font-weight:800;color:var(--accent);line-height:1;margin-bottom:.6rem}
+.acard h3{font-size:.95rem;font-weight:700;margin-bottom:.3rem}
+.acard p{font-size:.85rem;color:var(--mu);line-height:1.75}
 
-/* Engagement */
-.eng{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;counter-reset:e}
-@media (max-width:900px){.eng{grid-template-columns:1fr}}
-.eng-card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:26px}
-.eng-card .t{font-size:.8rem;font-weight:700;color:var(--teal-tx);letter-spacing:.06em;text-transform:uppercase}
-.eng-card h3{font-size:1.25rem;margin:6px 0 10px}
-.eng-card p{color:var(--mu);font-size:.95rem}
-.eng-card .d{margin-top:14px;font-size:.88rem;color:var(--ink)}
-.eng-card .d b{display:block;font-size:.74rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-tx);margin-bottom:4px}
-
-/* Why */
-.why{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
-@media (max-width:900px){.why{grid-template-columns:repeat(2,1fr)}}
-@media (max-width:520px){.why{grid-template-columns:1fr}}
-.why div{border-left:3px solid var(--gold);padding:4px 0 4px 18px}
-.why .big{font-family:'Syne',sans-serif;font-weight:800;font-size:2.2rem;line-height:1}
-.why h3{font-size:1rem;margin:8px 0 4px}
-.why p{color:var(--mu);font-size:.92rem}
-
-/* Team */
-.team{display:grid;grid-template-columns:1fr 1fr;gap:20px}
-@media (max-width:800px){.team{grid-template-columns:1fr}}
-.tcard{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:28px;display:flex;gap:20px}
-.tav{width:64px;height:64px;border-radius:50%;background:var(--navy);color:var(--gold);display:grid;place-items:center;font-family:'Syne',sans-serif;font-weight:800;font-size:1.2rem;flex:0 0 64px}
-.tcard h3{font-size:1.2rem}
-.tcard .role{color:var(--gold-tx);font-weight:600;font-size:.92rem;margin:2px 0 10px}
-.tcard p{color:var(--mu);font-size:.95rem}
+/* Team (matches main) */
+.team-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:2rem;max-width:960px}
+@media (max-width:800px){.team-grid{grid-template-columns:1fr}}
+.tcard{background:var(--bg3);border:.5px solid var(--b1);border-radius:3px;padding:2.5rem;display:flex;gap:1.75rem;align-items:flex-start;transition:border-color .3s,background var(--tr)}
+.tcard:hover{border-color:var(--b2)}
+.tavatar{width:60px;height:60px;border-radius:50%;background:var(--bg2);border:.5px solid rgba(200,169,110,.3);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-family:'Syne',sans-serif;font-size:1rem;font-weight:700;color:var(--accent)}
+.tname{font-family:'Syne',sans-serif;font-size:1.05rem;font-weight:700;color:var(--tx);margin-bottom:.2rem}
+.ttitle{font-size:.75rem;letter-spacing:.12em;text-transform:uppercase;color:var(--acc-tx);margin-bottom:1rem}
+.tbio{font-size:.86rem;color:var(--mu);line-height:1.8}
 
 /* Contracting */
-.contract{display:grid;grid-template-columns:1.2fr .8fr;gap:24px;align-items:start}
-@media (max-width:900px){.contract{grid-template-columns:1fr}}
-.facts{background:var(--card);border:1px solid var(--line);border-radius:14px;overflow:hidden}
-.facts table{width:100%;border-collapse:collapse;font-size:.95rem}
-.facts th,.facts td{text-align:left;padding:14px 20px;border-bottom:1px solid var(--line);vertical-align:top}
+.contract{display:grid;grid-template-columns:1.25fr .75fr;gap:2rem;align-items:start}
+@media (max-width:960px){.contract{grid-template-columns:1fr}}
+.facts{border:.5px solid var(--b1);border-radius:3px;overflow:hidden}
+.facts table{width:100%;border-collapse:collapse;font-size:.92rem}
+.facts th,.facts td{text-align:left;padding:1rem 1.4rem;border-bottom:.5px solid var(--b1);vertical-align:top}
 .facts tr:last-child th,.facts tr:last-child td{border-bottom:0}
-.facts th{width:34%;font-weight:600;color:var(--mu);background:#fcfbf9}
-.pill{display:inline-block;font-size:.78rem;font-weight:700;padding:2px 10px;border-radius:999px;background:#fff4dc;color:#7a4b00;margin-left:6px;white-space:nowrap}
-.codes{display:flex;flex-wrap:wrap;gap:6px}
-.codes span{font-family:ui-monospace,Menlo,monospace;font-size:.85rem;background:var(--bg2);border-radius:6px;padding:2px 8px}
-.side{background:var(--navy);color:#fff;border-radius:14px;padding:28px}
-.side h3{font-size:1.2rem;margin-bottom:10px}
-.side p{color:#cfd6e2;font-size:.95rem;margin-bottom:18px}
-.side ul{margin:0 0 22px;padding-left:18px;color:#e3e8f0;font-size:.93rem}
-.side li{margin:6px 0}
+.facts th{width:34%;font-size:.68rem;font-weight:500;letter-spacing:.16em;text-transform:uppercase;color:var(--acc-tx);background:var(--bg2);padding-top:1.2rem}
+.facts td{color:var(--tx);background:var(--bg)}
+.status{display:inline-block;font-size:.62rem;font-weight:500;letter-spacing:.12em;text-transform:uppercase;padding:.15rem .55rem;border-radius:2px;background:var(--pill-bg);color:var(--acc-tx);margin-left:.5rem;white-space:nowrap}
+.codes{display:flex;flex-wrap:wrap;gap:.4rem}
+.codes span{font-size:.82rem;letter-spacing:.04em;border:.5px solid var(--b2);border-radius:2px;padding:.1rem .55rem;color:var(--mu)}
+.side{background:var(--adv);border:.5px solid rgba(200,169,110,.25);border-left:2px solid var(--accent);border-radius:3px;padding:2.25rem}
+.side h3{font-size:1.15rem;font-weight:800;margin-bottom:.6rem}
+.side p{font-size:.9rem;color:var(--mu);margin-bottom:1.25rem;line-height:1.8}
+.side .ticks{margin-bottom:1.75rem}
 
-/* Contact */
-.contact{display:grid;grid-template-columns:.9fr 1.1fr;gap:48px}
-@media (max-width:900px){.contact{grid-template-columns:1fr}}
-.cinfo{display:grid;gap:18px;margin-top:28px}
-.cinfo div b{display:block;font-size:.74rem;letter-spacing:.16em;text-transform:uppercase;color:var(--gold-tx)}
-form{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:28px;display:grid;gap:16px}
-.frow{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+/* Contact (matches main) */
+.contact-in{display:grid;grid-template-columns:1fr 1fr;gap:6rem;align-items:start}
+@media (max-width:960px){.contact-in{grid-template-columns:1fr;gap:3rem}}
+.cinfo{display:flex;flex-direction:column;gap:2rem;margin-top:2.5rem}
+.ci-item{display:flex;flex-direction:column;gap:.3rem}
+.ci-label{font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;color:var(--acc-tx)}
+.ci-val{font-size:.975rem;color:var(--tx)}
+.ci-val a{color:var(--tx);text-decoration:none;border-bottom:.5px solid var(--b2);transition:border-color .2s}
+.ci-val a:hover{border-color:var(--accent)}
+.cform{display:flex;flex-direction:column;gap:1rem}
+.fg{display:flex;flex-direction:column;gap:.4rem}
+.fg label{font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--mu)}
+.fg label .req{color:var(--orange)}
+.fg input,.fg textarea,.fg select{background:var(--inp);border:.5px solid var(--b2);border-radius:2px;color:var(--tx);font-family:'DM Sans',sans-serif;font-size:.95rem;padding:.875rem 1rem;outline:none;transition:border-color .2s,background var(--tr),color var(--tr);width:100%}
+.fg input:focus,.fg textarea:focus,.fg select:focus{border-color:var(--accent);box-shadow:0 0 0 2px rgba(200,169,110,.35)}
+.fg select{appearance:none;cursor:pointer;background-image:linear-gradient(45deg,transparent 50%,var(--mu) 50%),linear-gradient(135deg,var(--mu) 50%,transparent 50%);background-position:calc(100% - 20px) 50%,calc(100% - 15px) 50%;background-size:5px 5px;background-repeat:no-repeat}
+.fg textarea{resize:vertical;min-height:130px}
+.frow{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
 @media (max-width:520px){.frow{grid-template-columns:1fr}}
-label{display:block;font-weight:600;font-size:.9rem;margin-bottom:6px}
-label .req{color:#a4161a}
-input,select,textarea{width:100%;font:inherit;font-size:1rem;color:var(--ink);background:#fff;border:1.5px solid #c9c4b8;border-radius:6px;padding:11px 12px}
-input:focus,select:focus,textarea:focus{outline:none;border-color:var(--navy);box-shadow:0 0 0 3px rgba(255,191,71,.6)}
-textarea{min-height:130px;resize:vertical}
-.form-msg{min-height:1.4em;font-weight:600;font-size:.95rem}
+.form-msg{font-size:.88rem;min-height:1.2rem}
 
-/* Footer */
-footer{background:var(--navy);color:#b9c3d3;padding:36px 0;font-size:.88rem}
-.foot{display:flex;flex-wrap:wrap;gap:16px;align-items:center;justify-content:space-between}
-footer a{color:#e3e8f0}
+/* Footer (matches main) */
+footer{background:var(--bg2);border-top:.5px solid var(--b1);padding:1.75rem 4rem;display:flex;justify-content:space-between;align-items:center;gap:1rem;flex-wrap:wrap;transition:background var(--tr)}
+.flogo{display:flex;align-items:center;gap:10px;text-decoration:none}
+.flogo-text{font-family:'Syne',sans-serif;font-size:.85rem;font-weight:700;color:var(--tx)}
+.flogo-text span{color:var(--accent)}
+.fright{font-size:.75rem;color:var(--mu)}
+.fright a{color:var(--mu)}
+.fright a:hover{color:var(--tx)}
+@media (max-width:960px){footer{padding:1.5rem}}
 
 /* Print: doubles as a capability statement */
 @media print{
-  header,.ctas,.frame,#contact form,.menu-btn,.skip{display:none!important}
-  body{background:#fff;font-size:10.5pt}
-  section{padding:18px 0;page-break-inside:avoid}
-  .hero,.ai,.side,footer{background:#fff!important;color:#000!important}
-  .hero *,.ai *,.side *,footer *{color:#000!important}
-  .hero-in{padding:10px 0;grid-template-columns:1fr}
-  .hero-art{display:none}
+  :root,[data-theme]{--bg:#fff;--bg2:#fff;--bg3:#fff;--adv:#fff;--tx:#000;--mu:#333;--acc-tx:#6b4f1a;--b1:#ccc;--b2:#bbb}
+  nav,.hero-actions,.frame,.cform,.mq-wrap,.skip,.hero-right,.hero-grid,.hero-glow,.hero-glow2{display:none!important}
+  body{font-size:10.5pt}
+  .hero{min-height:auto;padding:0 0 12px;grid-template-columns:1fr}
+  section{padding:16px 0;page-break-inside:avoid}
+  .rv{opacity:1!important;transform:none!important}
 }
 </style>
 </head>
 <body>
 <a class="skip" href="#main">Skip to main content</a>
 
-<header>
-  <div class="wrap nav" id="nav">
-    <a class="logo" href="/" aria-label="Corcam Solutions home">
-      <svg height="34" aria-hidden="true" viewBox="192.5 148 103 105" xmlns="http://www.w3.org/2000/svg">
+<nav id="nav" aria-label="Primary">
+  <a class="nav-logo" href="/" aria-label="Corcam Solutions home">
+    <svg aria-hidden="true" focusable="false" height="38" viewBox="192.5 148 103 105" xmlns="http://www.w3.org/2000/svg">
       <defs>
         <linearGradient id="a1"><stop stop-color="#00933B" offset="0"/><stop stop-color="#33A862" offset="1"/></linearGradient>
         <linearGradient id="a2"><stop stop-color="#00933B" offset="0"/><stop stop-color="#33A862" offset="1"/></linearGradient>
@@ -292,190 +304,161 @@ footer a{color:#e3e8f0}
         <path d="M40.05,31.87C41.93,34.78 41.09,38.67 38.18,40.54C35.27,42.42 31.39,41.58 29.51,38.67C27.64,35.76 28.47,31.87 31.38,30C34.29,28.12 38.17,28.96 40.05,31.87Z" fill="url(#b6x)"/>
       </g>
     </svg>
-      <span class="logo-text"><span>Corcam</span> Solutions</span>
-      <span class="logo-tag">Public Sector</span>
-    </a>
+    <span class="nav-logo-text"><span>Corcam</span> Solutions</span>
+    <span class="nav-tag">Public Sector</span>
+  </a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="#solutions">Solutions</a></li>
+    <li><a href="#ai">Responsible AI</a></li>
+    <li><a href="#modernize">Modernization</a></li>
+    <li><a href="#demo">Demo</a></li>
+    <li><a href="#compliance">Compliance</a></li>
+    <li><a href="#contracting">Contracting</a></li>
+  </ul>
+  <div class="nav-right">
+    <button class="theme-toggle" id="themeBtn" aria-label="Toggle light or dark theme">
+      <span class="t-moon" aria-hidden="true">&#127769;</span>
+      <span class="t-sun" aria-hidden="true">&#9728;</span>
+    </button>
+    <a class="nav-cta" href="#contact">Request a Briefing</a>
     <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="navLinks">Menu</button>
-    <ul id="navLinks">
-      <li><a href="#solutions">Solutions</a></li>
-      <li><a href="#ai">Responsible AI</a></li>
-      <li><a href="#modernize">Modernization</a></li>
-      <li><a href="#demo">Live demo</a></li>
-      <li><a href="#compliance">Compliance</a></li>
-      <li><a href="#contracting">Contracting</a></li>
-    </ul>
-    <a class="btn btn-gold" href="#contact">Request a briefing</a>
   </div>
-</header>
+</nav>
 
 <main id="main">
 
 <!-- HERO -->
-<div class="hero">
-  <div class="wrap hero-in">
-    <div>
-      <p class="eyebrow">Government technology · Est. 2009 · Frisco, Texas</p>
-      <h1>Modern, accessible, <em>AI-ready</em> public services.</h1>
-      <p class="lead">Corcam helps cities, counties, school districts, state and federal agencies modernize legacy systems, launch resident services people actually like using, and put AI to work with the accountability the public expects.</p>
-      <div class="ctas">
-        <a class="btn btn-gold" href="demo.html">Explore the live demo</a>
-        <a class="btn btn-line" href="#contracting">Contracting information</a>
-      </div>
-      <div class="trust-strip">
-        <span><svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 1l2 4.2 4.6.6-3.4 3.2.9 4.6L8 11.4 3.9 13.6l.9-4.6L1.4 5.8 6 5.2z"/></svg>Woman-owned small business</span>
-        <span><svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 1l6 2.5V8c0 3.5-2.6 6.2-6 7-3.4-.8-6-3.5-6-7V3.5z"/></svg>Fortune 500 CTO leadership</span>
-        <span><svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><circle cx="8" cy="8" r="7"/></svg>Headquartered in Frisco, Texas</span>
-      </div>
+<section class="hero" aria-labelledby="heroT">
+  <div class="hero-grid" aria-hidden="true"></div>
+  <div class="hero-glow" aria-hidden="true"></div>
+  <div class="hero-glow2" aria-hidden="true"></div>
+  <div class="hero-left">
+    <p class="hero-eyebrow">Public Sector &nbsp;&middot;&nbsp; Est. 2009 &nbsp;&middot;&nbsp; Frisco, Texas</p>
+    <h1 id="heroT">Modern.<br>Accessible.<br><em>AI-ready.</em></h1>
+    <p class="hero-sub">Corcam helps cities, counties, school districts, state and federal agencies modernize legacy systems, launch resident services people actually like using, and put AI to work with the accountability the public expects.</p>
+    <div class="hero-actions">
+      <a class="btn-p" href="demo.html">Explore the Live Demo</a>
+      <a class="btn-g" href="#contracting">Contracting Info</a>
     </div>
+    <div class="hero-stats">
+      <div><div class="hstat-num">30<sup>+</sup></div><div class="hstat-label">Years in technology</div></div>
+      <div><div class="hstat-num">5</div><div class="hstat-label">Levels of government</div></div>
+      <div><div class="hstat-num">1</div><div class="hstat-label">US Patent</div></div>
+      <div><div class="hstat-num">2009</div><div class="hstat-label">Founded</div></div>
+    </div>
+  </div>
 
-    <svg class="hero-art" viewBox="0 0 480 440" role="img" aria-labelledby="artT">
-      <title id="artT">Diagram: federal, state, county, city and school district systems connected through one secure, AI-assisted resident experience</title>
-      <defs>
-        <linearGradient id="hg" x1="0" x2="1"><stop offset="0" stop-color="#c8a96e"/><stop offset="1" stop-color="#e8c98e"/></linearGradient>
-      </defs>
-      <g font-family="DM Sans, sans-serif" font-size="13" font-weight="600">
-        <g fill="#17263d" stroke="rgba(255,255,255,.14)">
-          <rect x="10" y="20" width="150" height="54" rx="10"/>
-          <rect x="10" y="96" width="150" height="54" rx="10"/>
-          <rect x="10" y="172" width="150" height="54" rx="10"/>
-          <rect x="10" y="248" width="150" height="54" rx="10"/>
-          <rect x="10" y="324" width="150" height="54" rx="10"/>
+  <div class="hero-right">
+    <svg class="hero-art" viewBox="0 0 480 420" role="img" aria-labelledby="artT">
+      <title id="artT">Diagram: federal, state, county, city and school district systems connected through a secure API gateway to one AI-assisted resident experience</title>
+      <g font-family="DM Sans, sans-serif" font-size="13" font-weight="500">
+        <rect class="a-box" x="10" y="20" width="150" height="54" rx="3" stroke-width=".8"/>
+        <rect class="a-box" x="10" y="96" width="150" height="54" rx="3" stroke-width=".8"/>
+        <rect class="a-box" x="10" y="172" width="150" height="54" rx="3" stroke-width=".8"/>
+        <rect class="a-box" x="10" y="248" width="150" height="54" rx="3" stroke-width=".8"/>
+        <rect class="a-box" x="10" y="324" width="150" height="54" rx="3" stroke-width=".8"/>
+        <g class="a-tx" font-family="Syne, sans-serif" font-weight="700">
+          <text x="28" y="43">Federal</text><text x="28" y="119">State</text><text x="28" y="195">County</text><text x="28" y="271">City</text><text x="28" y="347">School district</text>
         </g>
-        <g fill="#fff">
-          <text x="30" y="43">Federal</text><text x="30" y="119">State</text><text x="30" y="195">County</text><text x="30" y="271">City</text><text x="30" y="347">School district</text>
+        <g class="a-mu" font-size="11" font-weight="400">
+          <text x="28" y="61">Partner APIs · FedRAMP</text><text x="28" y="137">SOAP · eligibility</text><text x="28" y="213">Mainframe · CICS</text><text x="28" y="289">IBM i · billing</text><text x="28" y="365">Student info system</text>
         </g>
-        <g fill="#9fb0c8" font-size="11" font-weight="500">
-          <text x="30" y="61">Partner APIs · FedRAMP</text><text x="30" y="137">SOAP · eligibility</text><text x="30" y="213">Mainframe · CICS</text><text x="30" y="289">IBM i · billing</text><text x="30" y="365">Student info system</text>
-        </g>
-        <g stroke="#c8a96e" stroke-width="1.6" fill="none" stroke-dasharray="4 5" opacity=".75">
+        <g class="a-line flow" stroke-width="1.4" opacity=".8">
           <path d="M160 47 C 210 47, 210 200, 250 200"/><path d="M160 123 C 205 123, 205 200, 250 200"/><path d="M160 199 L 250 200"/><path d="M160 275 C 205 275, 205 200, 250 200"/><path d="M160 351 C 210 351, 210 200, 250 200"/>
         </g>
-        <rect x="250" y="160" width="96" height="80" rx="14" fill="#213452" stroke="#c8a96e"/>
-        <text x="298" y="194" text-anchor="middle" fill="#e8c98e" font-family="Syne, sans-serif" font-weight="800" font-size="13">API</text>
-        <text x="298" y="212" text-anchor="middle" fill="#e8c98e" font-family="Syne, sans-serif" font-weight="800" font-size="13">GATEWAY</text>
-        <path d="M346 200 H 378" stroke="url(#hg)" stroke-width="2.4"/>
-        <circle cx="420" cy="200" r="44" fill="url(#hg)"/>
-        <text x="420" y="196" text-anchor="middle" fill="#0f1b2d" font-family="Syne, sans-serif" font-weight="800" font-size="13">One</text>
-        <text x="420" y="213" text-anchor="middle" fill="#0f1b2d" font-family="Syne, sans-serif" font-weight="800" font-size="13">resident</text>
-        <rect x="258" y="276" width="212" height="66" rx="12" fill="#17263d" stroke="#3dcca8"/>
-        <circle cx="284" cy="299" r="6" fill="#3dcca8"/>
-        <text x="298" y="303" fill="#fff">AI agent, human-approved</text>
-        <text x="280" y="325" fill="#9fb0c8" font-size="11" font-weight="500">Read-only by default · fully logged</text>
-        <path d="M357 276 V 244" stroke="#3dcca8" stroke-width="1.6" stroke-dasharray="3 4"/>
-        <rect x="262" y="60" width="190" height="66" rx="12" fill="#17263d" stroke="rgba(255,255,255,.2)"/>
-        <text x="280" y="88" fill="#fff">WCAG 2.2 AA · Section 508</text>
-        <text x="280" y="109" fill="#9fb0c8" font-size="11" font-weight="500">Mobile-first · multilingual</text>
-        <path d="M357 126 V 158" stroke="rgba(255,255,255,.3)" stroke-width="1.6" stroke-dasharray="3 4"/>
+        <rect class="a-box" x="250" y="162" width="96" height="76" rx="3" style="stroke:var(--accent)"/>
+        <text class="a-goldtx" x="298" y="196" text-anchor="middle" font-family="Syne, sans-serif" font-weight="800" font-size="12" letter-spacing="1.5">API</text>
+        <text class="a-goldtx" x="298" y="213" text-anchor="middle" font-family="Syne, sans-serif" font-weight="800" font-size="12" letter-spacing="1.5">GATEWAY</text>
+        <path d="M346 200 H 378" class="a-line" stroke-width="2"/>
+        <circle class="a-gold" cx="420" cy="200" r="44"/>
+        <text x="420" y="196" text-anchor="middle" fill="#0a0a0b" font-family="Syne, sans-serif" font-weight="800" font-size="13">One</text>
+        <text x="420" y="213" text-anchor="middle" fill="#0a0a0b" font-family="Syne, sans-serif" font-weight="800" font-size="13">resident</text>
+        <rect class="a-box" x="256" y="276" width="214" height="66" rx="3" style="stroke:var(--teal)"/>
+        <circle cx="278" cy="299" r="5" fill="#3dcca8"/>
+        <text class="a-tx" x="292" y="303" font-family="Syne, sans-serif" font-weight="700" font-size="12.5">AI agent, human-approved</text>
+        <text class="a-mu" x="274" y="325" font-size="11" font-weight="400">Read-only by default · fully logged</text>
+        <path d="M357 276 V 240" class="a-teal" stroke-width="1.4" stroke-dasharray="3 4"/>
+        <rect class="a-box" x="256" y="62" width="214" height="66" rx="3"/>
+        <text class="a-tx" x="274" y="90" font-family="Syne, sans-serif" font-weight="700" font-size="12.5">WCAG 2.2 AA · Section 508</text>
+        <text class="a-mu" x="274" y="111" font-size="11" font-weight="400">Mobile-first · multilingual</text>
+        <path d="M357 128 V 160" style="stroke:var(--b2)" stroke-width="1.4" stroke-dasharray="3 4"/>
       </g>
     </svg>
+  </div>
+</section>
+
+<div class="mq-wrap" aria-hidden="true">
+  <div class="mq-track">
+    <span class="mq-item">Resident Portals</span><span class="mq-dot">&#9670;</span><span class="mq-item">Agentic AI</span><span class="mq-dot">&#9670;</span><span class="mq-item">Legacy Modernization</span><span class="mq-dot">&#9670;</span><span class="mq-item">Cybersecurity</span><span class="mq-dot">&#9670;</span><span class="mq-item">Cloud &amp; Data Center</span><span class="mq-dot">&#9670;</span><span class="mq-item">ERP &amp; Architecture</span><span class="mq-dot">&#9670;</span><span class="mq-item">Section 508</span><span class="mq-dot">&#9670;</span><span class="mq-item">TX-RAMP</span><span class="mq-dot">&#9670;</span>
+    <span class="mq-item">Resident Portals</span><span class="mq-dot">&#9670;</span><span class="mq-item">Agentic AI</span><span class="mq-dot">&#9670;</span><span class="mq-item">Legacy Modernization</span><span class="mq-dot">&#9670;</span><span class="mq-item">Cybersecurity</span><span class="mq-dot">&#9670;</span><span class="mq-item">Cloud &amp; Data Center</span><span class="mq-dot">&#9670;</span><span class="mq-item">ERP &amp; Architecture</span><span class="mq-dot">&#9670;</span><span class="mq-item">Section 508</span><span class="mq-dot">&#9670;</span><span class="mq-item">TX-RAMP</span><span class="mq-dot">&#9670;</span>
   </div>
 </div>
 
 <!-- WHO WE SERVE -->
-<section aria-labelledby="serveT">
-  <div class="wrap">
-    <div class="head">
-      <p class="slabel">Who we serve</p>
-      <h2 class="stitle" id="serveT">Every level of government. One integrated approach.</h2>
-      <p class="sintro">Residents do not think in jurisdictions. We design services that work across them, while respecting each agency's systems, data ownership and procurement rules.</p>
+<section class="s2" aria-labelledby="serveT">
+  <div class="in">
+    <div class="head rv">
+      <p class="slabel">Who We Serve</p>
+      <h2 class="stitle" id="serveT">Every level of government. <span>One integrated approach.</span></h2>
+      <p class="sbody">Residents do not think in jurisdictions. We design services that work across them, while respecting each agency's systems, data ownership and procurement rules.</p>
     </div>
-    <div class="serve">
-      <div class="serve-card"><h3>Cities</h3><ul><li>Resident portals and 311</li><li>Permits, licensing, payments</li><li>Utility billing integration</li></ul></div>
-      <div class="serve-card"><h3>Counties</h3><ul><li>Property and records modernization</li><li>Courts and justice data sharing</li><li>Elections IT readiness</li></ul></div>
-      <div class="serve-card"><h3>School districts</h3><ul><li>Enrollment and family portals</li><li>Student data privacy (FERPA)</li><li>Classroom AI policy and training</li></ul></div>
-      <div class="serve-card"><h3>State agencies</h3><ul><li>Eligibility and benefits systems</li><li>ERP and budget analytics</li><li>Statewide AI governance</li></ul></div>
-      <div class="serve-card"><h3>Federal</h3><ul><li>Cloud and data center strategy</li><li>Legacy application modernization</li><li>Teaming and subcontracting</li></ul></div>
+    <div class="hgrid g5 rv d1">
+      <div><h3>Cities</h3><ul class="ticks"><li>Resident portals and 311</li><li>Permits, licensing, payments</li><li>Utility billing integration</li></ul></div>
+      <div><h3>Counties</h3><ul class="ticks"><li>Property and records modernization</li><li>Courts and justice data sharing</li><li>Elections IT readiness</li></ul></div>
+      <div><h3>School districts</h3><ul class="ticks"><li>Enrollment and family portals</li><li>Student data privacy (FERPA)</li><li>Classroom AI policy and training</li></ul></div>
+      <div><h3>State agencies</h3><ul class="ticks"><li>Eligibility and benefits systems</li><li>ERP and budget analytics</li><li>Statewide AI governance</li></ul></div>
+      <div><h3>Federal</h3><ul class="ticks"><li>Cloud and data center strategy</li><li>Legacy application modernization</li><li>Teaming and subcontracting</li></ul></div>
     </div>
   </div>
 </section>
 
 <!-- SOLUTIONS -->
-<section class="alt" id="solutions" aria-labelledby="solT">
-  <div class="wrap">
-    <div class="head">
+<section id="solutions" aria-labelledby="solT">
+  <div class="in">
+    <div class="head rv">
       <p class="slabel">Solutions</p>
       <h2 class="stitle" id="solT">From strategy to working software.</h2>
-      <p class="sintro">We combine enterprise architecture discipline with the practical realities of public budgets, aging systems and small IT teams.</p>
+      <p class="sbody">We combine enterprise architecture discipline with the practical realities of public budgets, aging systems and small IT teams.</p>
     </div>
-    <div class="sol">
-      <article class="sol-card">
-        <span class="sol-ico" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#c8a96e" stroke-width="1.8"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M3 9h18M8 21h8"/></svg></span>
-        <h3>Resident portals &amp; websites</h3>
-        <p>Accessible, mobile-first websites and single sign-on portals that bring services from multiple agencies into one place.</p>
-        <span class="out">Fewer calls, faster service</span>
-      </article>
-      <article class="sol-card">
-        <span class="sol-ico" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#c8a96e" stroke-width="1.8"><rect x="5" y="3" width="14" height="18" rx="2"/><path d="M9 8h6M9 12h6M9 16h3"/></svg></span>
-        <h3>Digital forms, permits &amp; payments</h3>
-        <p>Turn paper and PDF processes into guided online workflows with status tracking, e-signature and secure payments.</p>
-        <span class="out">Shorter processing times</span>
-      </article>
-      <article class="sol-card">
-        <span class="sol-ico" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#c8a96e" stroke-width="1.8"><circle cx="12" cy="12" r="3"/><path d="M12 3v3M12 18v3M3 12h3M18 12h3M5.6 5.6l2.1 2.1M16.3 16.3l2.1 2.1M5.6 18.4l2.1-2.1M16.3 7.7l2.1-2.1"/></svg></span>
-        <h3>AI assistants &amp; agentic workflows</h3>
-        <p>Resident-facing assistants and staff copilots that prefill forms, route cases and draft responses, always with human approval.</p>
-        <span class="out">Staff time back for complex cases</span>
-      </article>
-      <article class="sol-card">
-        <span class="sol-ico" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#c8a96e" stroke-width="1.8"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/><path d="M10 6.5h4a3 3 0 013 3V14"/></svg></span>
-        <h3>Legacy modernization &amp; integration</h3>
-        <p>Connect mainframe, AS/400 and SOAP systems to modern channels through secure APIs, then retire them on your schedule.</p>
-        <span class="out">Lower risk than rip-and-replace</span>
-      </article>
-      <article class="sol-card">
-        <span class="sol-ico" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#c8a96e" stroke-width="1.8"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg></span>
-        <h3>Data, budget &amp; transparency</h3>
-        <p>Budget analysis, performance dashboards and open data portals that help leaders decide and help the public see results.</p>
-        <span class="out">Decisions backed by data</span>
-      </article>
-      <article class="sol-card">
-        <span class="sol-ico" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#c8a96e" stroke-width="1.8"><path d="M12 3l8 3.5V12c0 4.5-3.4 8-8 9-4.6-1-8-4.5-8-9V6.5z"/><path d="M9 12l2 2 4-4"/></svg></span>
-        <h3>Cybersecurity &amp; data governance</h3>
-        <p>Security assessments, ransomware readiness and recovery planning, identity and access, and data classification policy.</p>
-        <span class="out">Resilience against attacks</span>
-      </article>
-      <article class="sol-card">
-        <span class="sol-ico" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#c8a96e" stroke-width="1.8"><path d="M7 18a5 5 0 01-.6-10A6 6 0 0118 9a4.5 4.5 0 01-1 9z"/></svg></span>
-        <h3>Cloud, data center &amp; networking</h3>
-        <p>Cloud migration, data center consolidation and network modernization aligned to TX-RAMP, StateRAMP and FedRAMP.</p>
-        <span class="out">Predictable cost, higher uptime</span>
-      </article>
-      <article class="sol-card">
-        <span class="sol-ico" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#c8a96e" stroke-width="1.8"><rect x="3" y="3" width="8" height="8" rx="1"/><rect x="13" y="3" width="8" height="8" rx="1"/><rect x="3" y="13" width="8" height="8" rx="1"/><rect x="13" y="13" width="8" height="8" rx="1"/></svg></span>
-        <h3>ERP &amp; enterprise architecture</h3>
-        <p>Vendor-neutral ERP selection, RFP development, implementation oversight and architecture roadmaps.</p>
-        <span class="out">Projects delivered on budget</span>
-      </article>
+    <div class="hgrid g4 rv d1">
+      <article><svg class="ico" viewBox="0 0 44 44" fill="none" aria-hidden="true"><rect x="7" y="9" width="30" height="21" rx="2" stroke="#3dcca8" stroke-width="1.2"/><path d="M7 15H37M16 36H28M22 30V36" stroke="#3dcca8" stroke-width="1.2" stroke-linecap="round"/></svg><h3>Resident Portals &amp; Websites</h3><p>Accessible, mobile-first websites and single sign-on portals that bring services from multiple agencies into one place.</p><span class="stag">Fewer calls, faster service</span></article>
+      <article><svg class="ico" viewBox="0 0 44 44" fill="none" aria-hidden="true"><rect x="11" y="6" width="22" height="32" rx="2" stroke="#3dcca8" stroke-width="1.2"/><path d="M16 14H28M16 20H28M16 26H23" stroke="#3dcca8" stroke-width="1.2" stroke-linecap="round"/><path d="M24 31L27 34L33 28" stroke="#c8a96e" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg><h3>Digital Forms, Permits &amp; Payments</h3><p>Turn paper and PDF processes into guided online workflows with status tracking, e-signature and secure payments.</p><span class="stag">Shorter processing times</span></article>
+      <article><svg class="ico" viewBox="0 0 44 44" fill="none" aria-hidden="true"><circle cx="22" cy="22" r="6" stroke="#3dcca8" stroke-width="1.2"/><path d="M22 8V12M22 32V36M8 22H12M32 22H36" stroke="#3dcca8" stroke-width="1.2" stroke-linecap="round"/><path d="M13.2 13.2L16 16M28 28L30.8 30.8M13.2 30.8L16 28M28 16L30.8 13.2" stroke="#3dcca8" stroke-width="1.2" stroke-linecap="round"/></svg><h3>AI Assistants &amp; Agentic Workflows</h3><p>Resident-facing assistants and staff copilots that prefill forms, route cases and draft responses, always with human approval.</p><span class="stag">Staff time back for complex cases</span></article>
+      <article><svg class="ico" viewBox="0 0 44 44" fill="none" aria-hidden="true"><rect x="6" y="6" width="14" height="14" rx="1.5" stroke="#c8a96e" stroke-width="1.2"/><rect x="24" y="24" width="14" height="14" rx="1.5" stroke="#3dcca8" stroke-width="1.2"/><path d="M20 13H27A4 4 0 0131 17V24" stroke="#3dcca8" stroke-width="1.2" stroke-linecap="round"/></svg><h3>Legacy Modernization &amp; Integration</h3><p>Connect mainframe, AS/400 and SOAP systems to modern channels through secure APIs, then retire them on your schedule.</p><span class="stag">Lower risk than rip-and-replace</span></article>
+      <article><svg class="ico" viewBox="0 0 44 44" fill="none" aria-hidden="true"><path d="M9 36V22M18 36V12M27 36V26M36 36V16M6 36H38" stroke="#3dcca8" stroke-width="1.2" stroke-linecap="round"/></svg><h3>Data, Budget &amp; Transparency</h3><p>Budget analysis, performance dashboards and open data portals that help leaders decide and help the public see results.</p><span class="stag">Decisions backed by data</span></article>
+      <article><svg class="ico" viewBox="0 0 44 44" fill="none" aria-hidden="true"><path d="M22 6L36 12V22C36 30 30 36 22 38C14 36 8 30 8 22V12Z" stroke="#3dcca8" stroke-width="1.2" stroke-linejoin="round"/><path d="M16 22L20 26L28 18" stroke="#c8a96e" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg><h3>Cybersecurity &amp; Data Governance</h3><p>Security assessments, ransomware readiness and recovery planning, identity and access, and data classification policy.</p><span class="stag">Resilience against attacks</span></article>
+      <article><svg class="ico" viewBox="0 0 44 44" fill="none" aria-hidden="true"><path d="M13 32A8 8 0 0112 16A10 10 0 0131 17A7.5 7.5 0 0130 32Z" stroke="#3dcca8" stroke-width="1.2" stroke-linejoin="round"/><path d="M17 26H27" stroke="#c8a96e" stroke-width="1.2" stroke-linecap="round"/></svg><h3>Cloud, Data Center &amp; Networking</h3><p>Cloud migration, data center consolidation and network modernization aligned to TX-RAMP, StateRAMP and FedRAMP.</p><span class="stag">Predictable cost, higher uptime</span></article>
+      <article><svg class="ico" viewBox="0 0 44 44" fill="none" aria-hidden="true"><rect x="8" y="8" width="12" height="12" rx="1.5" stroke="#3dcca8" stroke-width="1.2"/><rect x="24" y="8" width="12" height="12" rx="1.5" stroke="#3dcca8" stroke-width="1.2"/><rect x="8" y="24" width="12" height="12" rx="1.5" stroke="#3dcca8" stroke-width="1.2"/><rect x="24" y="24" width="12" height="12" rx="1.5" stroke="#c8a96e" stroke-width="1.2"/></svg><h3>ERP &amp; Enterprise Architecture</h3><p>Vendor-neutral ERP selection, RFP development, implementation oversight and architecture roadmaps.</p><span class="stag">Projects delivered on budget</span></article>
     </div>
   </div>
 </section>
 
 <!-- AI -->
-<section class="ai" id="ai" aria-labelledby="aiT">
-  <div class="wrap">
-    <div class="head">
-      <p class="slabel">Responsible AI for government</p>
-      <h2 class="stitle" id="aiT">AI that serves the public, and answers to it.</h2>
-      <p class="sintro">Agentic AI can complete multi-step tasks across agency systems. In government, it must also be transparent, auditable and under human control. We build both.</p>
+<section class="s-adv" id="ai" aria-labelledby="aiT">
+  <div class="in">
+    <div class="head rv">
+      <p class="slabel">Responsible AI for Government</p>
+      <h2 class="stitle" id="aiT">AI that serves the public, <span>and answers to it.</span></h2>
+      <p class="sbody">Agentic AI can complete multi-step tasks across agency systems. In government, it must also be transparent, auditable and under human control. We build both.</p>
     </div>
     <div class="ai-grid">
-      <div class="uses">
+      <div class="uses rv d1">
         <div class="use"><span class="n">01</span><div><h3>Resident assistants</h3><p>Answer questions in plain language and multiple languages, then guide residents through forms and prefill what the government already knows.</p></div></div>
         <div class="use"><span class="n">02</span><div><h3>Caseworker copilots</h3><p>Summarize case files, flag missing documents and draft correspondence, so staff spend time on judgment rather than data entry.</p></div></div>
         <div class="use"><span class="n">03</span><div><h3>Public records request triage</h3><p>Classify, search and redact large document sets for public information requests, with every redaction reviewable.</p></div></div>
         <div class="use"><span class="n">04</span><div><h3>Policy, budget and procurement analysis</h3><p>Compare budget scenarios, analyze contracts and draft RFP language from approved templates.</p></div></div>
         <div class="use"><span class="n">05</span><div><h3>AI readiness and workforce training</h3><p>AI use policies, risk assessments and hands-on staff training that make adoption safe and practical.</p></div></div>
       </div>
-      <div class="guard">
+      <div class="guard rv d2">
         <h3>Our AI guardrails</h3>
         <p>Built into every engagement, not added later.</p>
         <ul>
-          <li><svg viewBox="0 0 20 20" fill="none" stroke="#3dcca8" stroke-width="2"><path d="M4 10l4 4 8-8"/></svg><span><b>Human in the loop.</b> AI never submits, approves, denies or pays anything without a person's decision.</span></li>
-          <li><svg viewBox="0 0 20 20" fill="none" stroke="#3dcca8" stroke-width="2"><path d="M4 10l4 4 8-8"/></svg><span><b>Least privilege.</b> Read-only access by default, with every permission tied to a stated purpose.</span></li>
-          <li><svg viewBox="0 0 20 20" fill="none" stroke="#3dcca8" stroke-width="2"><path d="M4 10l4 4 8-8"/></svg><span><b>Full audit trail.</b> Every prompt, data access and action is logged for oversight and public records.</span></li>
-          <li><svg viewBox="0 0 20 20" fill="none" stroke="#3dcca8" stroke-width="2"><path d="M4 10l4 4 8-8"/></svg><span><b>Clear disclosure.</b> Residents always know when they are interacting with AI, in line with the Texas Responsible AI Governance Act (HB 149).</span></li>
-          <li><svg viewBox="0 0 20 20" fill="none" stroke="#3dcca8" stroke-width="2"><path d="M4 10l4 4 8-8"/></svg><span><b>Your data stays yours.</b> Private model deployments in authorized clouds, and no training on resident data.</span></li>
-          <li><svg viewBox="0 0 20 20" fill="none" stroke="#3dcca8" stroke-width="2"><path d="M4 10l4 4 8-8"/></svg><span><b>Measured risk.</b> Use cases assessed against the NIST AI Risk Management Framework before launch.</span></li>
+          <li><svg viewBox="0 0 20 20" fill="none" stroke="#3dcca8" stroke-width="1.8" aria-hidden="true"><path d="M4 10l4 4 8-8"/></svg><span><b>Human in the loop.</b> AI never submits, approves, denies or pays anything without a person's decision.</span></li>
+          <li><svg viewBox="0 0 20 20" fill="none" stroke="#3dcca8" stroke-width="1.8" aria-hidden="true"><path d="M4 10l4 4 8-8"/></svg><span><b>Least privilege.</b> Read-only access by default, with every permission tied to a stated purpose.</span></li>
+          <li><svg viewBox="0 0 20 20" fill="none" stroke="#3dcca8" stroke-width="1.8" aria-hidden="true"><path d="M4 10l4 4 8-8"/></svg><span><b>Full audit trail.</b> Every prompt, data access and action is logged for oversight and public records.</span></li>
+          <li><svg viewBox="0 0 20 20" fill="none" stroke="#3dcca8" stroke-width="1.8" aria-hidden="true"><path d="M4 10l4 4 8-8"/></svg><span><b>Clear disclosure.</b> Residents always know when they are interacting with AI, in line with the Texas Responsible AI Governance Act (HB 149).</span></li>
+          <li><svg viewBox="0 0 20 20" fill="none" stroke="#3dcca8" stroke-width="1.8" aria-hidden="true"><path d="M4 10l4 4 8-8"/></svg><span><b>Your data stays yours.</b> Private model deployments in authorized clouds, and no training on resident data.</span></li>
+          <li><svg viewBox="0 0 20 20" fill="none" stroke="#3dcca8" stroke-width="1.8" aria-hidden="true"><path d="M4 10l4 4 8-8"/></svg><span><b>Measured risk.</b> Use cases assessed against the NIST AI Risk Management Framework before launch.</span></li>
         </ul>
       </div>
     </div>
@@ -484,54 +467,39 @@ footer a{color:#e3e8f0}
 
 <!-- MODERNIZATION -->
 <section id="modernize" aria-labelledby="modT">
-  <div class="wrap">
-    <div class="head">
-      <p class="slabel">Legacy modernization</p>
+  <div class="in">
+    <div class="head rv">
+      <p class="slabel">Legacy Modernization</p>
       <h2 class="stitle" id="modT">Modernize without a risky rebuild.</h2>
-      <p class="sintro">Many critical public systems are decades old and still work. We protect what works, unlock its data, and replace components only when the business case is clear.</p>
+      <p class="sbody">Many critical public systems are decades old and still work. We protect what works, unlock its data, and replace components only when the business case is clear.</p>
     </div>
-    <div class="mod">
-      <div class="mod-step">
-        <span class="k">Step 1</span>
-        <h3>Wrap</h3>
-        <p>Expose legacy data and transactions through a secure API gateway, without changing the core system.</p>
-        <ul><li>System and data inventory</li><li>SOAP to REST and mainframe adapters</li><li>Identity federation and monitoring</li></ul>
-      </div>
-      <div class="mod-step">
-        <span class="k">Step 2</span>
-        <h3>Extend</h3>
-        <p>Build modern resident and staff experiences, and AI assistants, on top of those APIs.</p>
-        <ul><li>Portals, mobile and chat channels</li><li>Event queues for outage resilience</li><li>Quick wins in 90 days</li></ul>
-      </div>
-      <div class="mod-step">
-        <span class="k">Step 3</span>
-        <h3>Replace</h3>
-        <p>Retire legacy components one at a time, behind stable interfaces residents never notice.</p>
-        <ul><li>Cloud-native or SaaS replacement</li><li>Data migration and validation</li><li>Vendor-neutral selection support</li></ul>
-      </div>
+    <div class="hgrid g3 rv d1">
+      <div><span class="kicker">Step 01</span><h3 style="font-size:1.4rem;font-weight:800">Wrap</h3><p style="margin-bottom:1.25rem">Expose legacy data and transactions through a secure API gateway, without changing the core system.</p><ul class="ticks"><li>System and data inventory</li><li>SOAP to REST and mainframe adapters</li><li>Identity federation and monitoring</li></ul></div>
+      <div><span class="kicker">Step 02</span><h3 style="font-size:1.4rem;font-weight:800">Extend</h3><p style="margin-bottom:1.25rem">Build modern resident and staff experiences, and AI assistants, on top of those APIs.</p><ul class="ticks"><li>Portals, mobile and chat channels</li><li>Event queues for outage resilience</li><li>Quick wins in 90 days</li></ul></div>
+      <div><span class="kicker">Step 03</span><h3 style="font-size:1.4rem;font-weight:800">Replace</h3><p style="margin-bottom:1.25rem">Retire legacy components one at a time, behind stable interfaces residents never notice.</p><ul class="ticks"><li>Cloud-native or SaaS replacement</li><li>Data migration and validation</li><li>Vendor-neutral selection support</li></ul></div>
     </div>
-    <div class="systems" aria-label="Legacy platforms we integrate">
-      <span>IBM z/OS mainframe · CICS · COBOL</span><span>IBM i / AS/400</span><span>Oracle &amp; SQL Server</span><span>SOAP / XML web services</span><span>SAP, Oracle, Workday, Tyler ERP</span><span>Flat-file and batch interfaces</span>
+    <div class="pills rv d2" aria-label="Legacy platforms we integrate">
+      <span class="pill">IBM z/OS · CICS · COBOL</span><span class="pill">IBM i / AS/400</span><span class="pill">Oracle &amp; SQL Server</span><span class="pill">SOAP / XML services</span><span class="pill">SAP · Oracle · Workday · Tyler ERP</span><span class="pill">Batch &amp; flat-file interfaces</span>
     </div>
   </div>
 </section>
 
 <!-- DEMO -->
-<section class="alt" id="demo" aria-labelledby="demoT">
-  <div class="wrap demo">
-    <div>
-      <p class="slabel">See it in action</p>
-      <h2 class="stitle" id="demoT">A unified resident portal, working today.</h2>
-      <p class="sintro">Our concept portal shows how one secure sign-in can connect city, county, school district, state and federal services, with an AI assistant that completes tasks only with the resident's approval.</p>
-      <ul>
-        <li><svg viewBox="0 0 20 20" fill="none" stroke="#0d6e59" stroke-width="2.2" aria-hidden="true"><path d="M4 10l4 4 8-8"/></svg>Cross-agency request tracking in one view</li>
-        <li><svg viewBox="0 0 20 20" fill="none" stroke="#0d6e59" stroke-width="2.2" aria-hidden="true"><path d="M4 10l4 4 8-8"/></svg>Agentic AI plan with approval steps and legacy system tags</li>
-        <li><svg viewBox="0 0 20 20" fill="none" stroke="#0d6e59" stroke-width="2.2" aria-hidden="true"><path d="M4 10l4 4 8-8"/></svg>Resident consent center and live system status</li>
-        <li><svg viewBox="0 0 20 20" fill="none" stroke="#0d6e59" stroke-width="2.2" aria-hidden="true"><path d="M4 10l4 4 8-8"/></svg>Keyboard and screen-reader accessible, mobile-first</li>
+<section class="s2" id="demo" aria-labelledby="demoT">
+  <div class="in demo">
+    <div class="rv">
+      <p class="slabel">See It in Action</p>
+      <h2 class="stitle" id="demoT">A unified resident portal, <span>working today.</span></h2>
+      <p class="sbody">Our concept portal shows how one secure sign-in can connect city, county, school district, state and federal services, with an AI assistant that completes tasks only with the resident's approval.</p>
+      <ul class="ticks">
+        <li>Cross-agency request tracking in one view</li>
+        <li>Agentic AI plan with approval steps and legacy system tags</li>
+        <li>Resident consent center and live system status</li>
+        <li>Keyboard and screen-reader accessible, mobile-first</li>
       </ul>
-      <a class="btn btn-dark" href="demo.html">Open the live demo</a>
+      <a class="btn-p" href="demo.html">Open the Live Demo</a>
     </div>
-    <div class="frame" aria-hidden="true">
+    <div class="frame rv d2" aria-hidden="true">
       <div class="frame-bar"><i></i><i></i><i></i><span>corcaminc.com/civic/demo</span></div>
       <div class="frame-view"><iframe src="demo.html" title="Preview of the OneResident demo portal" tabindex="-1" loading="lazy"></iframe></div>
     </div>
@@ -540,129 +508,120 @@ footer a{color:#e3e8f0}
 
 <!-- COMPLIANCE -->
 <section id="compliance" aria-labelledby="compT">
-  <div class="wrap">
-    <div class="head">
-      <p class="slabel">Standards &amp; compliance</p>
+  <div class="in">
+    <div class="head rv">
+      <p class="slabel">Standards &amp; Compliance</p>
       <h2 class="stitle" id="compT">Built to the standards public agencies answer to.</h2>
     </div>
-    <div class="comp">
-      <div class="comp-card">
-        <h3>Accessibility</h3>
-        <ul><li><b>WCAG 2.2 AA</b> as the baseline, AAA where practical</li><li><b>Section 508</b> and Texas accessibility rules (1 TAC 206 and 213)</li><li>Plain language and multilingual design</li></ul>
-      </div>
-      <div class="comp-card">
-        <h3>Security &amp; cloud</h3>
-        <ul><li><b>TX-RAMP</b>, StateRAMP and <b>FedRAMP</b> authorized hosting</li><li>Texas DIR security standards (<b>1 TAC 202</b>)</li><li><b>NIST CSF 2.0</b> and NIST 800-53 controls</li><li>CJIS-aware design for justice data</li></ul>
-      </div>
-      <div class="comp-card">
-        <h3>Privacy &amp; AI</h3>
-        <ul><li><b>FERPA</b> for student records, <b>HIPAA</b> for health data</li><li>Consent tracking and data minimization</li><li><b>NIST AI RMF</b> and Texas <b>HB 149</b> AI disclosure</li><li>NIST 800-63 digital identity</li></ul>
-      </div>
+    <div class="hgrid g3 rv d1">
+      <div><h3>Accessibility</h3><ul class="ticks"><li><span><b>WCAG 2.2 AA</b> as the baseline, AAA where practical</span></li><li><span><b>Section 508</b> and Texas accessibility rules (1 TAC 206 and 213)</span></li><li>Plain language and multilingual design</li></ul></div>
+      <div><h3>Security &amp; Cloud</h3><ul class="ticks"><li><span><b>TX-RAMP</b>, StateRAMP and <b>FedRAMP</b> authorized hosting</span></li><li><span>Texas DIR security standards (<b>1 TAC 202</b>)</span></li><li><span><b>NIST CSF 2.0</b> and NIST 800-53 controls</span></li><li>CJIS-aware design for justice data</li></ul></div>
+      <div><h3>Privacy &amp; AI</h3><ul class="ticks"><li><span><b>FERPA</b> for student records, <b>HIPAA</b> for health data</span></li><li>Consent tracking and data minimization</li><li><span><b>NIST AI RMF</b> and Texas <b>HB 149</b> AI disclosure</span></li><li>NIST 800-63 digital identity</li></ul></div>
     </div>
     <p class="note">We design, build and assess solutions to these frameworks and deploy on platforms that hold the applicable authorizations.</p>
   </div>
 </section>
 
 <!-- ENGAGEMENT -->
-<section class="alt" aria-labelledby="engT">
-  <div class="wrap">
-    <div class="head">
-      <p class="slabel">How we engage</p>
-      <h2 class="stitle" id="engT">Start small. Prove value. Scale with confidence.</h2>
-      <p class="sintro">Engagements are scoped to fit purchasing thresholds and budget cycles, with clear deliverables at every stage.</p>
+<section class="s2" aria-labelledby="engT">
+  <div class="in">
+    <div class="head rv">
+      <p class="slabel">How We Engage</p>
+      <h2 class="stitle" id="engT">Start small. Prove value. <span>Scale with confidence.</span></h2>
+      <p class="sbody">Engagements are scoped to fit purchasing thresholds and budget cycles, with clear deliverables at every stage.</p>
     </div>
-    <div class="eng">
-      <div class="eng-card"><span class="t">2 to 4 weeks</span><h3>Assess</h3><p>Technology, security or AI readiness assessment with a prioritized roadmap and cost estimates.</p><p class="d"><b>You receive</b>Findings report, roadmap, budget-ready business case</p></div>
-      <div class="eng-card"><span class="t">60 to 90 days</span><h3>Pilot</h3><p>One high-value service or AI use case delivered end to end, with measured results before wider rollout.</p><p class="d"><b>You receive</b>Working solution, success metrics, go/no-go recommendation</p></div>
-      <div class="eng-card"><span class="t">Ongoing</span><h3>Scale &amp; support</h3><p>Expand proven solutions across departments, with implementation oversight, training and managed support.</p><p class="d"><b>You receive</b>Delivery team, governance reporting, knowledge transfer</p></div>
+    <div class="hgrid g3 rv d1">
+      <div><span class="kicker">2 to 4 weeks</span><h3 style="font-size:1.25rem;font-weight:800">Assess</h3><p>Technology, security or AI readiness assessment with a prioritized roadmap and cost estimates.</p><span class="stag">Roadmap &amp; business case</span></div>
+      <div><span class="kicker">60 to 90 days</span><h3 style="font-size:1.25rem;font-weight:800">Pilot</h3><p>One high-value service or AI use case delivered end to end, with measured results before wider rollout.</p><span class="stag">Working solution &amp; metrics</span></div>
+      <div><span class="kicker">Ongoing</span><h3 style="font-size:1.25rem;font-weight:800">Scale &amp; Support</h3><p>Expand proven solutions across departments, with implementation oversight, training and managed support.</p><span class="stag">Governance &amp; knowledge transfer</span></div>
     </div>
   </div>
 </section>
 
 <!-- WHY -->
 <section aria-labelledby="whyT">
-  <div class="wrap">
-    <div class="head">
+  <div class="in">
+    <div class="head rv">
       <p class="slabel">Why Corcam</p>
-      <h2 class="stitle" id="whyT">Enterprise depth, small-firm accountability.</h2>
+      <h2 class="stitle" id="whyT">Enterprise depth, <span>small-firm accountability.</span></h2>
     </div>
-    <div class="why">
-      <div><span class="big">30+</span><h3>Years in technology</h3><p>Led global IT at Procter &amp; Gamble and Neiman Marcus Group.</p></div>
-      <div><span class="big">2009</span><h3>Founded</h3><p>A Texas-based firm that understands Texas government and procurement.</p></div>
-      <div><span class="big">US</span><h3>Patented architecture</h3><p>US patent for inflight Wi-Fi network architecture, built at Gogo.</p></div>
-      <div><span class="big">0</span><h3>Vendor lock-in</h3><p>Vendor-neutral advice. We recommend what fits, not what we resell.</p></div>
+    <div class="acards rv d1">
+      <div class="acard"><div class="acard-n">30+</div><h3>Years in technology</h3><p>Led global IT at Procter &amp; Gamble and Neiman Marcus Group.</p></div>
+      <div class="acard"><div class="acard-n">2009</div><h3>Founded</h3><p>A Texas-based firm that understands Texas government and procurement.</p></div>
+      <div class="acard"><div class="acard-n">US</div><h3>Patented architecture</h3><p>US patent for inflight Wi-Fi network architecture, built at Gogo.</p></div>
+      <div class="acard"><div class="acard-n">0</div><h3>Vendor lock-in</h3><p>Vendor-neutral advice. We recommend what fits, not what we resell.</p></div>
     </div>
   </div>
 </section>
 
 <!-- TEAM -->
-<section class="alt" aria-labelledby="teamT">
-  <div class="wrap">
-    <div class="head">
+<section class="s2" aria-labelledby="teamT">
+  <div class="in">
+    <div class="head rv">
       <p class="slabel">Leadership</p>
       <h2 class="stitle" id="teamT">Senior leaders on every engagement.</h2>
     </div>
-    <div class="team">
-      <div class="tcard"><span class="tav" aria-hidden="true">KK</span><div><h3>Kelly Karthik</h3><p class="role">President &amp; CEO</p><p>Co-founder of Corcam Solutions. Leads firm operations, client relationships and contract management, with strategic oversight of every engagement.</p></div></div>
-      <div class="tcard"><span class="tav" aria-hidden="true">VK</span><div><h3>Vijay Karthik</h3><p class="role">COO &amp; CTO</p><p>30-year technology executive. Former Global SVP &amp; CTO at Procter &amp; Gamble and SVP &amp; CTO at Neiman Marcus Group. US patent holder and frequent speaker on AI governance, cybersecurity and modernization.</p></div></div>
+    <div class="team-grid">
+      <div class="tcard rv"><div class="tavatar" aria-hidden="true">KK</div><div><div class="tname">Kelly Karthik</div><div class="ttitle">President &amp; CEO</div><p class="tbio">Co-founder of Corcam Solutions. Leads firm operations, client relationships and contract management, with strategic oversight of every engagement.</p></div></div>
+      <div class="tcard rv d2"><div class="tavatar" aria-hidden="true">VK</div><div><div class="tname">Vijay Karthik</div><div class="ttitle">COO &amp; CTO</div><p class="tbio">30-year technology executive. Former Global SVP &amp; CTO at Procter &amp; Gamble and SVP &amp; CTO at Neiman Marcus Group. US patent holder and frequent speaker on AI governance, cybersecurity and modernization.</p></div></div>
     </div>
   </div>
 </section>
 
 <!-- CONTRACTING -->
 <section id="contracting" aria-labelledby="conT">
-  <div class="wrap">
-    <div class="head">
-      <p class="slabel">For procurement teams</p>
+  <div class="in">
+    <div class="head rv">
+      <p class="slabel">For Procurement Teams</p>
       <h2 class="stitle" id="conT">Contracting at a glance.</h2>
     </div>
     <div class="contract">
-      <div class="facts">
+      <div class="facts rv d1">
         <table>
           <caption class="sr-only">Corcam Solutions company and contracting details</caption>
           <tr><th scope="row">Legal name</th><td>Corcam Solutions LLC</td></tr>
           <tr><th scope="row">Headquarters</th><td>Frisco, Texas (Dallas-Fort Worth)</td></tr>
           <tr><th scope="row">Founded</th><td>2009</td></tr>
           <tr><th scope="row">Business type</th><td>Woman-owned small business</td></tr>
-          <tr><th scope="row">Certifications</th><td>Texas HUB<span class="pill">In progress</span><br>NCTRCA WBE<span class="pill">In progress</span><br>SBA WOSB<span class="pill">In progress</span></td></tr>
+          <tr><th scope="row">Certifications</th><td>Texas HUB<span class="status">In progress</span><br>NCTRCA WBE<span class="status">In progress</span><br>SBA WOSB<span class="status">In progress</span></td></tr>
           <tr><th scope="row">NAICS codes</th><td><div class="codes"><span>541511</span><span>541512</span><span>541519</span><span>541611</span><span>541690</span><span>611420</span></div></td></tr>
           <tr><th scope="row">Arrangements</th><td>Prime contracts, subcontracting and teaming partnerships</td></tr>
           <tr><th scope="row">Contact</th><td><a href="mailto:help@corcaminc.com">help@corcaminc.com</a></td></tr>
         </table>
       </div>
-      <aside class="side" aria-labelledby="partT">
-        <h3 id="partT">Prime contractors and partners</h3>
+      <aside class="side rv d2" aria-labelledby="partT">
+        <h3 id="partT">Prime contractors &amp; partners</h3>
         <p>Looking for a Texas-based, woman-owned partner with senior technology leadership? We team on public sector pursuits.</p>
-        <ul><li>AI strategy, governance and training</li><li>Enterprise and solution architecture</li><li>Cloud and data center advisory</li><li>RFP strategy and proposal support</li></ul>
-        <a class="btn btn-gold" href="#contact">Discuss teaming</a>
+        <ul class="ticks"><li>AI strategy, governance and training</li><li>Enterprise and solution architecture</li><li>Cloud and data center advisory</li><li>RFP strategy and proposal support</li></ul>
+        <a class="btn-p" href="#contact">Discuss Teaming</a>
       </aside>
     </div>
   </div>
 </section>
 
 <!-- CONTACT -->
-<section class="alt" id="contact" aria-labelledby="ctT">
-  <div class="wrap contact">
-    <div>
+<section class="s2" id="contact" aria-labelledby="ctT" style="border-top:.5px solid var(--b1)">
+  <div class="in contact-in">
+    <div class="rv">
       <p class="slabel">Contact</p>
       <h2 class="stitle" id="ctT">Request a briefing.</h2>
-      <p class="sintro">Tell us about your agency's priorities. We will follow up within one business day to schedule a no-cost conversation.</p>
+      <p class="sbody">Tell us about your agency's priorities. We will follow up within one business day to schedule a no-cost conversation.</p>
       <div class="cinfo">
-        <div><b>Email</b><a href="mailto:help@corcaminc.com">help@corcaminc.com</a></div>
-        <div><b>Location</b>Frisco, Texas · serving clients statewide and nationally</div>
-        <div><b>Main site</b><a href="/">corcaminc.com</a></div>
+        <div class="ci-item"><span class="ci-label">Email</span><div class="ci-val"><a href="mailto:help@corcaminc.com">help@corcaminc.com</a></div></div>
+        <div class="ci-item"><span class="ci-label">Location</span><div class="ci-val">Frisco, Texas · serving clients statewide and nationally</div></div>
+        <div class="ci-item"><span class="ci-label">Main site</span><div class="ci-val"><a href="/">corcaminc.com</a></div></div>
       </div>
     </div>
-    <form id="contactForm" novalidate>
+    <form class="cform rv d2" id="contactForm" novalidate>
       <div class="frow">
-        <div><label for="fn">First name <span class="req" aria-hidden="true">*</span></label><input id="fn" type="text" name="firstName" autocomplete="given-name" required></div>
-        <div><label for="ln">Last name</label><input id="ln" type="text" name="lastName" autocomplete="family-name"></div>
+        <div class="fg"><label for="fn">First Name <span class="req" aria-hidden="true">*</span></label><input id="fn" type="text" name="firstName" autocomplete="given-name" required></div>
+        <div class="fg"><label for="ln">Last Name</label><input id="ln" type="text" name="lastName" autocomplete="family-name"></div>
       </div>
       <div class="frow">
-        <div><label for="em">Work email <span class="req" aria-hidden="true">*</span></label><input id="em" type="email" name="email" autocomplete="email" required></div>
-        <div><label for="org">Agency or organization</label><input id="org" type="text" name="org" autocomplete="organization"></div>
+        <div class="fg"><label for="em">Work Email <span class="req" aria-hidden="true">*</span></label><input id="em" type="email" name="email" autocomplete="email" required></div>
+        <div class="fg"><label for="org">Agency or Organization</label><input id="org" type="text" name="org" autocomplete="organization"></div>
       </div>
-      <div>
+      <div class="fg">
         <label for="inq">Topic</label>
         <select id="inq" name="inquiry">
           <option value="Public Sector: General briefing">General briefing</option>
@@ -674,10 +633,10 @@ footer a{color:#e3e8f0}
           <option value="Public Sector: Teaming / subcontracting">Teaming or subcontracting</option>
         </select>
       </div>
-      <div><label for="msg">How can we help? <span class="req" aria-hidden="true">*</span></label><textarea id="msg" name="message" required></textarea></div>
-      <div class="cf-turnstile" data-sitekey="0x4AAAAAAC1GhUInBdZQ7FsB" data-theme="light"></div>
+      <div class="fg"><label for="msg">How Can We Help? <span class="req" aria-hidden="true">*</span></label><textarea id="msg" name="message" required></textarea></div>
+      <div class="cf-turnstile" data-sitekey="0x4AAAAAAC1GhUInBdZQ7FsB" data-theme="auto" style="margin:.5rem 0"></div>
       <p class="form-msg" id="formMsg" role="status" aria-live="polite"></p>
-      <button type="submit" class="btn btn-dark" style="justify-content:center">Send request</button>
+      <button type="submit" class="btn-p" style="width:100%;text-align:center">Send Request</button>
     </form>
   </div>
 </section>
@@ -685,20 +644,80 @@ footer a{color:#e3e8f0}
 </main>
 
 <footer>
-  <div class="wrap foot">
-    <span>&copy; 2026 Corcam Solutions LLC · Frisco, Texas</span>
-    <span><a href="/">Corcam home</a> · <a href="demo.html">Live demo</a> · <a href="#contracting">Contracting</a></span>
-  </div>
+  <a class="flogo" href="/" aria-label="Corcam Solutions home">
+    <svg aria-hidden="true" focusable="false" height="30" viewBox="192.5 148 103 105" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="fa1"><stop stop-color="#00933B" offset="0"/><stop stop-color="#33A862" offset="1"/></linearGradient>
+        <linearGradient id="fa2"><stop stop-color="#00933B" offset="0"/><stop stop-color="#33A862" offset="1"/></linearGradient>
+        <linearGradient id="fa3"><stop stop-color="#00933B" offset="0"/><stop stop-color="#33A862" offset="1"/></linearGradient>
+        <linearGradient id="fa4"><stop stop-color="#00933B" offset="0"/><stop stop-color="#33A862" offset="1"/></linearGradient>
+        <linearGradient id="fa5"><stop stop-color="#00933B" offset="0"/><stop stop-color="#33A862" offset="1"/></linearGradient>
+        <linearGradient id="fa6"><stop stop-color="#00933B" offset="0"/><stop stop-color="#33A862" offset="1"/></linearGradient>
+        <linearGradient id="fb1x"><stop stop-color="#F2B50F" offset="0"/><stop stop-color="#F4C33F" offset="1"/></linearGradient>
+        <linearGradient id="fb2x"><stop stop-color="#F2B50F" offset="0"/><stop stop-color="#F4C33F" offset="1"/></linearGradient>
+        <linearGradient id="fb3x"><stop stop-color="#F2B50F" offset="0"/><stop stop-color="#F4C33F" offset="1"/></linearGradient>
+        <linearGradient id="fb4x"><stop stop-color="#F2B50F" offset="0"/><stop stop-color="#F4C33F" offset="1"/></linearGradient>
+        <linearGradient id="fb5x"><stop stop-color="#F2B50F" offset="0"/><stop stop-color="#F4C33F" offset="1"/></linearGradient>
+        <linearGradient id="fb6x"><stop stop-color="#F2B50F" offset="0"/><stop stop-color="#F4C33F" offset="1"/></linearGradient>
+        <linearGradient id="fc1"><stop stop-color="#DD4B39" offset="0"/><stop stop-color="#E36F60" offset="1"/></linearGradient>
+        <linearGradient id="fc2"><stop stop-color="#DD4B39" offset="0"/><stop stop-color="#E36F60" offset="1"/></linearGradient>
+        <linearGradient id="fc3"><stop stop-color="#DD4B39" offset="0"/><stop stop-color="#E36F60" offset="1"/></linearGradient>
+        <linearGradient id="fc4"><stop stop-color="#DD4B39" offset="0"/><stop stop-color="#E36F60" offset="1"/></linearGradient>
+        <linearGradient id="fc5"><stop stop-color="#DD4B39" offset="0"/><stop stop-color="#E36F60" offset="1"/></linearGradient>
+        <linearGradient id="fc6"><stop stop-color="#DD4B39" offset="0"/><stop stop-color="#E36F60" offset="1"/></linearGradient>
+      </defs>
+      <g transform="translate(192.5,148)">
+        <path d="M52.07,17.57C51.3,19.46 49.13,20.37 47.24,19.59C45.34,18.82 44.43,16.66 45.2,14.76C45.98,12.87 48.14,11.96 50.03,12.73C51.93,13.5 52.84,15.67 52.07,17.57Z" fill="url(#fa1)"/>
+        <path d="M42.95,16.25C42.98,18.52 41.17,20.38 38.9,20.42C36.62,20.45 34.75,18.64 34.72,16.37C34.69,14.09 36.51,12.22 38.78,12.19C41.05,12.16 42.92,13.97 42.95,16.25Z" fill="url(#fa2)"/>
+        <path d="M33.06,18.86C34.08,21.16 33.04,23.87 30.72,24.89C28.41,25.91 25.72,24.86 24.69,22.55C23.68,20.24 24.72,17.54 27.03,16.52C29.34,15.5 32.04,16.54 33.06,18.86Z" fill="url(#fa3)"/>
+        <path d="M24.08,25.82C26.12,27.74 26.23,30.96 24.3,33C22.39,35.05 19.17,35.15 17.12,33.23C15.08,31.31 14.98,28.1 16.9,26.05C18.81,24 22.03,23.9 24.08,25.82Z" fill="url(#fa4)"/>
+        <path d="M17.91,36.85C20.84,37.92 22.34,41.17 21.26,44.09C20.19,47.02 16.94,48.52 14.02,47.44C11.09,46.37 9.59,43.12 10.67,40.2C11.73,37.27 14.98,35.77 17.91,36.85Z" fill="url(#fa5)"/>
+        <path d="M16.39,50.79C19.85,50.62 22.8,53.29 22.97,56.75C23.14,60.21 20.47,63.15 17.01,63.33C13.55,63.5 10.61,60.83 10.44,57.37C10.27,53.91 12.93,50.96 16.39,50.79Z" fill="url(#fa6)"/>
+        <path d="M79.22,90.41C77.96,88.8 78.26,86.47 79.87,85.21C81.49,83.96 83.82,84.25 85.06,85.87C86.33,87.49 86.03,89.81 84.42,91.07C82.8,92.32 80.47,92.02 79.22,90.41Z" fill="url(#fc1)"/>
+        <path d="M84.91,83.17C82.93,82.07 82.22,79.56 83.33,77.58C84.43,75.59 86.94,74.88 88.92,75.99C90.91,77.1 91.62,79.61 90.51,81.59C89.41,83.58 86.9,84.28 84.91,83.17Z" fill="url(#fc2)"/>
+        <path d="M87.6,73.31C85.09,73.03 83.27,70.78 83.54,68.27C83.81,65.76 86.07,63.94 88.58,64.21C91.09,64.49 92.91,66.74 92.63,69.25C92.37,71.76 90.11,73.58 87.6,73.31Z" fill="url(#fc3)"/>
+        <path d="M86.06,62.04C83.38,62.85 80.54,61.33 79.72,58.65C78.91,55.96 80.43,53.13 83.12,52.31C85.8,51.5 88.64,53.02 89.45,55.71C90.27,58.39 88.75,61.23 86.06,62.04Z" fill="url(#fc4)"/>
+        <path d="M79.59,51.19C77.2,53.18 73.64,52.86 71.64,50.47C69.65,48.08 69.97,44.52 72.37,42.52C74.76,40.52 78.32,40.85 80.32,43.23C82.31,45.63 81.99,49.19 79.59,51.19Z" fill="url(#fc5)"/>
+        <path d="M68.27,42.9C66.69,45.98 62.91,47.2 59.83,45.62C56.74,44.03 55.53,40.25 57.11,37.17C58.69,34.09 62.47,32.87 65.56,34.45C68.64,36.04 69.85,39.82 68.27,42.9Z" fill="url(#fc6)"/>
+        <path d="M86.67,46.15C84.64,46.43 82.77,45.01 82.5,42.98C82.22,40.96 83.64,39.09 85.66,38.81C87.69,38.53 89.56,39.95 89.83,41.97C90.11,44 88.7,45.87 86.67,46.15Z" fill="url(#fb1x)"/>
+        <path d="M83.25,37.6C81.3,38.76 78.78,38.12 77.61,36.17C76.45,34.22 77.08,31.69 79.04,30.53C80.99,29.36 83.52,30 84.68,31.95C85.84,33.91 85.2,36.43 83.25,37.6Z" fill="url(#fb2x)"/>
+        <path d="M76.05,30.34C74.56,32.37 71.69,32.82 69.66,31.33C67.62,29.84 67.18,26.98 68.67,24.94C70.16,22.9 73.02,22.46 75.06,23.95C77.09,25.43 77.54,28.3 76.05,30.34Z" fill="url(#fb3x)"/>
+        <path d="M65.53,26.04C64.88,28.77 62.15,30.47 59.41,29.83C56.69,29.19 54.99,26.45 55.63,23.72C56.27,20.99 59,19.3 61.73,19.94C64.47,20.57 66.17,23.31 65.53,26.04Z" fill="url(#fb4x)"/>
+        <path d="M52.9,26.21C53.43,29.28 51.37,32.21 48.29,32.74C45.23,33.27 42.3,31.21 41.77,28.13C41.24,25.07 43.3,22.14 46.37,21.61C49.44,21.08 52.37,23.14 52.9,26.21Z" fill="url(#fb5x)"/>
+        <path d="M40.05,31.87C41.93,34.78 41.09,38.67 38.18,40.54C35.27,42.42 31.39,41.58 29.51,38.67C27.64,35.76 28.47,31.87 31.38,30C34.29,28.12 38.17,28.96 40.05,31.87Z" fill="url(#fb6x)"/>
+      </g>
+    </svg>
+    <span class="flogo-text"><span>Corcam</span> Solutions LLC</span>
+  </a>
+  <div class="fright">2026 Corcam Solutions LLC &nbsp;&middot;&nbsp; Frisco, Texas &nbsp;&middot;&nbsp; <a href="/">Home</a> &nbsp;&middot;&nbsp; <a href="demo.html">Live demo</a></div>
 </footer>
 
 <script>
 (function(){
+  var H=document.documentElement;
+  // Theme (shared with corcaminc.com via the same localStorage key)
+  var themeBtn=document.getElementById('themeBtn');
+  themeBtn.addEventListener('click',function(){
+    var next=H.getAttribute('data-theme')==='dark'?'light':'dark';
+    H.setAttribute('data-theme',next);
+    try{localStorage.setItem('corcam-theme',next)}catch(e){}
+  });
+
+  // Mobile menu
   var nav=document.getElementById('nav'),mb=document.getElementById('menuBtn');
   mb.addEventListener('click',function(){var o=nav.classList.toggle('open');mb.setAttribute('aria-expanded',String(o))});
   [].forEach.call(document.querySelectorAll('#navLinks a'),function(a){a.addEventListener('click',function(){nav.classList.remove('open');mb.setAttribute('aria-expanded','false')})});
 
+  // Scroll reveal
+  var rv=document.querySelectorAll('.rv');
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('on');io.unobserve(e.target)}})},{threshold:.12});
+    [].forEach.call(rv,function(el){io.observe(el)});
+  }else{[].forEach.call(rv,function(el){el.classList.add('on')})}
+
+  // Contact form (same Cloudflare Worker as the main site)
   var form=document.getElementById('contactForm'),msg=document.getElementById('formMsg');
-  function say(t,ok){msg.textContent=t;msg.style.color=ok?'#0d6e59':'#a4161a'}
+  function say(t,ok){msg.textContent=t;msg.style.color=ok?'var(--teal-tx)':'var(--orange)'}
   form.addEventListener('submit',function(e){
     e.preventDefault();
     var req=[].slice.call(form.querySelectorAll('[required]')),bad=req.filter(function(f){return !f.value.trim()||(f.type==='email'&&!/^\S+@\S+\.\S+$/.test(f.value))});
@@ -715,7 +734,7 @@ footer a{color:#e3e8f0}
       else say(res.error||'Something went wrong. Please email help@corcaminc.com.',false);
     })
     .catch(function(){say('We could not reach the server. Please email help@corcaminc.com.',false)})
-    .then(function(){btn.disabled=false;btn.textContent='Send request'});
+    .then(function(){btn.disabled=false;btn.textContent='Send Request'});
   });
 })();
 </script>
