@@ -47,11 +47,12 @@ nav{position:fixed;top:0;left:0;right:0;z-index:500;display:flex;align-items:cen
 .theme-toggle{width:44px;height:24px;background:var(--b2);border:.5px solid var(--b2);border-radius:12px;cursor:pointer;position:relative;transition:background .3s;flex-shrink:0;padding:0}
 .theme-toggle::after{content:'';position:absolute;top:4px;left:4px;width:14px;height:14px;border-radius:50%;background:var(--accent);transition:transform .3s}
 [data-theme="light"] .theme-toggle::after{transform:translateX(20px)}
+.theme-toggle::before{content:'';position:absolute;inset:-10px -4px}
 .t-moon,.t-sun{font-size:11px;position:absolute;top:50%;transform:translateY(-50%);pointer-events:none;line-height:1}
 .t-moon{left:5px}.t-sun{right:4px}
 .nav-cta{font-family:'Syne',sans-serif;font-size:.76rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#0a0a0b;background:var(--accent);border:none;padding:.55rem 1.3rem;border-radius:2px;cursor:pointer;text-decoration:none;transition:background .2s;white-space:nowrap}
 .nav-cta:hover{background:var(--accent2)}
-.menu-btn{display:none;background:transparent;border:.5px solid var(--b2);color:var(--tx);border-radius:2px;padding:.4rem .8rem;font-family:'Syne',sans-serif;font-size:.7rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;cursor:pointer}
+.menu-btn{display:none;background:transparent;border:.5px solid var(--b2);color:var(--tx);border-radius:2px;padding:.55rem .9rem;min-height:40px;font-family:'Syne',sans-serif;font-size:.7rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;cursor:pointer}
 @media (max-width:1480px){.nav-links{gap:1.4rem}.nav-tag{display:none}}
 @media (max-width:1240px){nav{padding:.9rem 2rem}.nav-links{gap:1.1rem}.nav-links a{font-size:.72rem}}
 @media (max-width:1040px){
@@ -322,6 +323,13 @@ footer{background:var(--bg2);border-top:.5px solid var(--b1);padding:1.75rem 4re
 .net-stats{display:flex;gap:2.5rem;flex-wrap:wrap;margin:0 0 3rem;padding-bottom:2.5rem;border-bottom:.5px solid var(--b1)}
 .net-stats .hstat-num{font-size:1.9rem}
 
+@media (max-width:600px){
+  .slabel,.hstat-label,.hero-eyebrow,.pill,.kicker,.ci-label,.facts th,.board th,.leak-hd span{font-size:.72rem}
+  .stag,.status,.board-hd span,.live{font-size:.68rem}
+  .fl-tag{font-size:.64rem}
+  .hgrid > *{padding:1.75rem 1.5rem}
+  .hero-stats{gap:1.5rem 2rem}
+}
 /* Print: doubles as a capability statement */
 @media print{
   :root,[data-theme]{--bg:#fff;--bg2:#fff;--bg3:#fff;--adv:#fff;--tx:#000;--mu:#333;--acc-tx:#6b4f1a;--b1:#ccc;--b2:#bbb}

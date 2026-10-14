@@ -39,7 +39,7 @@ a:hover{color:var(--blue-dk)}
 /* Trust banner */
 .trust{background:#eef1f6;border-bottom:1px solid var(--line);font-size:.875rem}
 .trust .wrap{display:flex;flex-wrap:wrap;align-items:center;gap:8px 14px;padding-top:6px;padding-bottom:6px}
-.trust-btn{background:none;border:0;color:var(--blue);font:inherit;font-weight:600;text-decoration:underline;cursor:pointer;padding:4px 2px}
+.trust-btn{background:none;border:0;color:var(--blue);font:inherit;font-weight:600;text-decoration:underline;cursor:pointer;padding:10px 2px}
 .trust-panel{display:none;border-top:1px solid var(--line);background:#eef1f6}
 .trust-panel.open{display:block}
 .trust-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px;padding:18px 20px}
@@ -69,7 +69,7 @@ nav.main a[aria-current="page"]{border-bottom-color:var(--focus)}
 /* Alert */
 .alert{display:flex;gap:14px;align-items:flex-start;border-left:6px solid var(--amber);background:var(--amber-lt);padding:14px 18px;border-radius:8px;margin:24px 0 0}
 .alert p{margin:2px 0 0;color:var(--ink-2)}
-.alert .close{margin-left:auto;background:none;border:0;cursor:pointer;color:var(--ink-2);font-size:1.4rem;line-height:1;padding:2px 8px;border-radius:6px}
+.alert .close{margin-left:auto;background:none;border:0;cursor:pointer;color:var(--ink-2);font-size:1.5rem;line-height:1;min-width:40px;min-height:40px;border-radius:6px;flex:0 0 auto}
 
 /* Hero + search */
 .hero{padding:28px 0 8px}
@@ -99,6 +99,8 @@ section{margin-top:32px}
 .sec-head p{margin:0;color:var(--muted);font-size:.95rem}
 .grid-2{display:grid;grid-template-columns:1.35fr 1fr;gap:24px}
 @media (max-width:960px){.grid-2{grid-template-columns:1fr}}
+.grid-2 > *{min-width:0}
+@media (max-width:600px){th,td{padding:12px 12px}.sec-head{flex-direction:column;align-items:flex-start;gap:4px}.hdr-right{margin-left:0;width:100%}.secure{font-size:.8rem}}
 .card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);box-shadow:var(--shadow)}
 .card-pad{padding:20px}
 
@@ -133,7 +135,7 @@ section{margin-top:32px}
 .tab{background:none;border:0;font:inherit;font-weight:600;color:var(--muted);padding:12px 14px;border-bottom:3px solid transparent;cursor:pointer;white-space:nowrap}
 .tab[aria-selected="true"]{color:var(--blue);border-bottom-color:var(--blue)}
 .tab .cnt{background:var(--bg);border-radius:999px;padding:1px 8px;font-size:.78rem;margin-left:4px}
-.table-wrap{overflow-x:auto}
+.table-wrap{overflow-x:auto;position:relative}
 table{width:100%;border-collapse:collapse;font-size:.95rem}
 caption{text-align:left;padding:0 0 8px}
 th,td{padding:14px 16px;text-align:left;border-bottom:1px solid var(--line);vertical-align:top}
