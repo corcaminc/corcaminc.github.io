@@ -72,6 +72,9 @@ nav{position:fixed;top:0;left:0;right:0;z-index:500;display:flex;align-items:cen
 .btn-g{font-family:'Syne',sans-serif;font-size:.8rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--mu);background:transparent;border:.5px solid var(--b2);padding:.95rem 2.2rem;border-radius:2px;cursor:pointer;text-decoration:none;display:inline-block;transition:color .2s,border-color .2s}
 .btn-g:hover{color:var(--tx);border-color:rgba(150,150,150,.5)}
 .btn-teal{font-family:'Syne',sans-serif;font-size:.78rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#0a0a0b;background:var(--teal);border:none;padding:.85rem 2rem;border-radius:2px;cursor:pointer;text-decoration:none;display:inline-block;transition:opacity .2s,transform .15s}
+.civic-link{display:inline-flex;align-items:center;gap:.7rem;margin-top:1.5rem;font-size:.86rem;color:var(--tx);text-decoration:none;border:.5px solid rgba(200,169,110,.4);border-radius:2px;padding:.5rem .9rem .5rem .5rem;transition:border-color .2s,background .2s;max-width:100%}
+.civic-link:hover{border-color:var(--accent);background:rgba(200,169,110,.08)}
+.civic-tag{font-family:'Syne',sans-serif;font-size:.6rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;background:var(--accent);color:#0a0a0b;padding:.2rem .5rem;border-radius:2px;flex-shrink:0}
 .btn-teal:hover{opacity:.85;transform:translateY(-1px)}
 .btn-or{font-family:'Syne',sans-serif;font-size:.78rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#0a0a0b;background:var(--orange);border:none;padding:.85rem 2rem;border-radius:2px;cursor:pointer;text-decoration:none;display:inline-block;transition:opacity .2s,transform .15s}
 .btn-or:hover{opacity:.85;transform:translateY(-1px)}
@@ -227,6 +230,7 @@ footer{background:var(--bg2);border-top:.5px solid var(--b1);padding:1.75rem 4re
     <li><a href="#services">Services</a></li>
     <li><a href="#advisory">Advisory</a></li>
     <li><a href="#practice">Practices</a></li>
+    <li><a href="/civic/">Public Sector</a></li>
     <li><a href="#team">Leadership</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
@@ -251,6 +255,7 @@ footer{background:var(--bg2);border-top:.5px solid var(--b1);padding:1.75rem 4re
       <a class="btn-p" href="#services">Explore Services</a>
       <a class="btn-g" href="#contact">Start a Conversation</a>
     </div>
+    <a class="civic-link" href="/civic/"><span class="civic-tag">New</span>Public Sector: AI, toll recovery &amp; modernization for government<span aria-hidden="true">&rarr;</span></a>
     <div class="hero-stats">
       <div><div class="hstat-num"><span class="ct" data-t="30">0</span><sup>+</sup></div><div class="hstat-label">Years experience</div></div>
       <div><div class="hstat-num"><span class="ct" data-t="50">0</span><sup>+</sup></div><div class="hstat-label">Leadership years</div></div>
@@ -361,7 +366,10 @@ footer{background:var(--bg2);border-top:.5px solid var(--b1);padding:1.75rem 4re
       <ul class="dp-list">
         <li>GenAI strategy &amp; implementation</li><li>Cloud migration &amp; DevSecOps</li><li>Global Capability Center setup</li><li>Enterprise architecture &amp; integration</li><li>Cybersecurity &amp; data governance</li><li>Omnichannel &amp; eCommerce platforms</li><li>Manufacturing IT &amp; PLM modernization</li>
       </ul>
-      <a class="btn-teal" href="#contact">Discuss a Tech Project</a>
+      <div style="display:flex;gap:1rem;flex-wrap:wrap">
+        <a class="btn-teal" href="#contact">Discuss a Tech Project</a>
+        <a class="btn-g" href="/civic/">Public Sector Solutions</a>
+      </div>
     </div>
     <div class="dp camp rv d2">
       <svg class="dp-bg" width="300" height="300" viewBox="0 0 300 300" fill="none"><circle cx="150" cy="150" r="110" stroke="#e88c5c" stroke-width="1.5"/><path d="M60 210C60 210 85 170 150 170C215 170 240 210 240 210" stroke="#e88c5c" stroke-width="1.5" stroke-linecap="round"/><path d="M80 150C80 150 105 110 150 110C195 110 220 150 220 150" stroke="#e88c5c" stroke-width="1.5" stroke-linecap="round"/><path d="M150 40V110M150 190V260" stroke="#e88c5c" stroke-width=".6" opacity=".35"/></svg>
