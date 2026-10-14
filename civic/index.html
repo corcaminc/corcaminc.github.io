@@ -62,7 +62,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:500;display:flex;align-items:cen
   .nav-links a{display:block;padding:.75rem 0;border-top:.5px solid var(--b1)}
   .menu-btn{display:block}
 }
-@media (max-width:520px){.nav-cta{display:none}}
+@media (max-width:720px){.nav-cta{display:none}}
 
 /* Buttons */
 .btn-p,.btn-g{font-family:'Syne',sans-serif;font-size:.8rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:.95rem 2.2rem;border-radius:2px;cursor:pointer;text-decoration:none;display:inline-block;transition:background .2s,color .2s,border-color .2s,transform .15s}
@@ -330,6 +330,30 @@ footer{background:var(--bg2);border-top:.5px solid var(--b1);padding:1.75rem 4re
   .hgrid > *{padding:1.75rem 1.5rem}
   .hero-stats{gap:1.5rem 2rem}
 }
+h1,h2,h3{overflow-wrap:break-word}
+.pill{overflow-wrap:anywhere}
+@media (min-width:961px) and (max-width:1200px){.board th:nth-child(4),.board td:nth-child(4){display:none}.board th,.board td{padding:.8rem 1rem}}
+@media (max-width:480px){.stitle{font-size:1.75rem}.hero{padding-left:1.25rem;padding-right:1.25rem}section{padding-left:1.25rem;padding-right:1.25rem}.board-hd h3{font-size:.88rem}.acard{padding:1.5rem}.journey li{padding-left:3.4rem}.journey li::before{left:1.1rem}}
+@media (max-width:480px){.facts th,.facts td{display:block;width:100%}.facts th{padding-bottom:.2rem;border-bottom:0}.facts td{padding-top:.4rem;background:var(--bg2)}.board th,.board td{padding:.7rem .75rem;font-size:.8rem}.board th{font-size:.62rem}}
+.hero-left,.hero-right,.contract > *,.qs > *,.ai-grid > *,.demo > *,.contact-in > *{min-width:0}
+@media(max-width:480px){
+  nav{padding:.75rem 1.1rem}
+  .nav-logo{flex:1 1 auto;min-width:0;gap:8px}
+  .nav-logo svg{height:30px;width:auto}
+  .nav-logo-text{font-size:.8rem;letter-spacing:.02em}
+  .nav-right{gap:.6rem;flex:0 0 auto}
+  .menu-btn{padding:.5rem .75rem}
+  .hstat-num{font-size:1.7rem}
+}
+@media (max-width:600px){.hero h1{font-size:9.6vw;letter-spacing:-.02em}}
+@media (max-width:360px){.stitle{font-size:1.55rem}}
+@media(max-width:360px){
+  .nav-logo svg{height:26px}
+  .nav-logo-text{font-size:.7rem}
+  .menu-btn{padding:.45rem .6rem;font-size:.62rem}
+  .nav-right{gap:.45rem}
+}
+
 /* Print: doubles as a capability statement */
 @media print{
   :root,[data-theme]{--bg:#fff;--bg2:#fff;--bg3:#fff;--adv:#fff;--tx:#000;--mu:#333;--acc-tx:#6b4f1a;--b1:#ccc;--b2:#bbb}
@@ -436,7 +460,7 @@ footer{background:var(--bg2);border-top:.5px solid var(--b1);padding:1.75rem 4re
 
   <div class="hero-right">
     <svg class="hero-art" viewBox="0 0 480 460" role="img" aria-labelledby="artT">
-      <title id="artT">Diagram: federal, state, county, city, school district and toll authority systems connected through a secure API gateway to one AI-assisted front door for citizens and businesses</title>
+      <title id="artT">Diagram: federal, state, county, city, school district and toll authority systems connected through a secure API and MCP gateway to one AI-assisted front door for citizens and businesses</title>
       <g font-family="DM Sans, sans-serif" font-size="13" font-weight="500">
         <rect class="a-box" x="10" y="20" width="150" height="54" rx="3" stroke-width=".8"/>
         <rect class="a-box" x="10" y="96" width="150" height="54" rx="3" stroke-width=".8"/>
@@ -444,31 +468,32 @@ footer{background:var(--bg2);border-top:.5px solid var(--b1);padding:1.75rem 4re
         <rect class="a-box" x="10" y="248" width="150" height="54" rx="3" stroke-width=".8"/>
         <rect class="a-box" x="10" y="324" width="150" height="54" rx="3" stroke-width=".8"/>
         <rect class="a-box" x="10" y="400" width="150" height="54" rx="3" stroke-width=".8"/>
-        <g class="a-tx" font-family="Syne, sans-serif" font-weight="700">
-          <text x="28" y="43">Federal</text><text x="28" y="119">State</text><text x="28" y="195">County</text><text x="28" y="271">City</text><text x="28" y="347">School district</text><text x="28" y="423">Toll authority</text>
+        <g class="a-tx" font-family="Syne, sans-serif" font-weight="700" font-size="12.5">
+          <text x="26" y="43">Federal</text><text x="26" y="119">State</text><text x="26" y="195">County</text><text x="26" y="271">City</text><text x="26" y="347">School district</text><text x="26" y="423">Toll authority</text>
         </g>
-        <g class="a-mu" font-size="11" font-weight="400">
-          <text x="28" y="61">Partner APIs · FedRAMP</text><text x="28" y="137">SOAP · eligibility</text><text x="28" y="213">Mainframe · CICS</text><text x="28" y="289">IBM i · billing</text><text x="28" y="365">Student info system</text><text x="28" y="441">Image review · back office</text>
+        <g class="a-mu" font-size="10.5" font-weight="400">
+          <text x="26" y="61">Partner APIs · FedRAMP</text><text x="26" y="137">SOAP · eligibility</text><text x="26" y="213">Mainframe · CICS</text><text x="26" y="289">IBM i · billing</text><text x="26" y="365">Student info system</text><text x="26" y="441">Images · invoicing</text>
         </g>
         <g class="a-line flow" stroke-width="1.4" opacity=".8">
-          <path d="M160 47 C 210 47, 210 200, 250 200"/><path d="M160 123 C 205 123, 205 200, 250 200"/><path d="M160 199 L 250 200"/><path d="M160 275 C 205 275, 205 200, 250 200"/><path d="M160 351 C 210 351, 210 200, 250 200"/><path d="M160 427 C 215 427, 215 200, 250 200"/>
+          <path d="M160 47 C 196 47, 196 227, 222 227"/><path d="M160 123 C 194 123, 194 227, 222 227"/><path d="M160 199 C 192 199, 192 227, 222 227"/><path d="M160 275 C 192 275, 192 227, 222 227"/><path d="M160 351 C 194 351, 194 227, 222 227"/><path d="M160 427 C 196 427, 196 227, 222 227"/>
         </g>
-        <rect class="a-box" x="250" y="162" width="96" height="76" rx="3" style="stroke:var(--accent)"/>
-        <text class="a-goldtx" x="298" y="196" text-anchor="middle" font-family="Syne, sans-serif" font-weight="800" font-size="12" letter-spacing="1.5">API</text>
-        <text class="a-goldtx" x="298" y="213" text-anchor="middle" font-family="Syne, sans-serif" font-weight="800" font-size="12" letter-spacing="1.5">GATEWAY</text>
-        <path d="M346 200 H 378" class="a-line" stroke-width="2"/>
-        <circle class="a-gold" cx="420" cy="200" r="44"/>
-        <text x="420" y="196" text-anchor="middle" fill="#0a0a0b" font-family="Syne, sans-serif" font-weight="800" font-size="13">One front</text>
-        <text x="420" y="213" text-anchor="middle" fill="#0a0a0b" font-family="Syne, sans-serif" font-weight="800" font-size="13">door</text>
-        <rect class="a-box" x="256" y="276" width="214" height="66" rx="3" style="stroke:var(--teal)"/>
-        <circle cx="278" cy="299" r="5" fill="#3dcca8"/>
-        <text class="a-tx" x="292" y="303" font-family="Syne, sans-serif" font-weight="700" font-size="12.5">AI agent, human-approved</text>
-        <text class="a-mu" x="274" y="325" font-size="11" font-weight="400">Read-only by default · fully logged</text>
-        <path d="M357 276 V 240" class="a-teal" stroke-width="1.4" stroke-dasharray="3 4"/>
-        <rect class="a-box" x="256" y="62" width="214" height="66" rx="3"/>
-        <text class="a-tx" x="274" y="90" font-family="Syne, sans-serif" font-weight="700" font-size="12.5">WCAG 2.2 AA · Section 508</text>
-        <text class="a-mu" x="274" y="111" font-size="11" font-weight="400">Mobile-first · multilingual</text>
-        <path d="M357 128 V 160" style="stroke:var(--b2)" stroke-width="1.4" stroke-dasharray="3 4"/>
+        <rect class="a-box" x="222" y="172" width="128" height="110" rx="3" style="stroke:var(--accent)"/>
+        <text class="a-goldtx" x="286" y="214" text-anchor="middle" font-family="Syne, sans-serif" font-weight="800" font-size="12" letter-spacing=".6">API + MCP</text>
+        <text class="a-goldtx" x="286" y="232" text-anchor="middle" font-family="Syne, sans-serif" font-weight="800" font-size="12" letter-spacing=".6">GATEWAY</text>
+        <text class="a-mu" x="286" y="256" text-anchor="middle" font-size="9.5" font-weight="400">Apps · AI agents</text>
+        <path d="M350 227 H 369" class="a-line" stroke-width="2"/>
+        <circle class="a-gold" cx="422" cy="227" r="53"/>
+        <text x="422" y="224" text-anchor="middle" fill="#0a0a0b" font-family="Syne, sans-serif" font-weight="800" font-size="10.5">One</text>
+        <text x="422" y="238" text-anchor="middle" fill="#0a0a0b" font-family="Syne, sans-serif" font-weight="800" font-size="10.5">front door</text>
+        <rect class="a-box" x="230" y="60" width="240" height="64" rx="3"/>
+        <text class="a-tx" x="248" y="88" font-family="Syne, sans-serif" font-weight="700" font-size="11.5">WCAG 2.2 AA · Section 508</text>
+        <text class="a-mu" x="248" y="108" font-size="10.5" font-weight="400">Mobile-first · multilingual</text>
+        <path d="M286 124 V 170" style="stroke:var(--b2)" stroke-width="1.4" stroke-dasharray="3 4"/>
+        <rect class="a-box" x="230" y="322" width="240" height="64" rx="3" style="stroke:var(--teal)"/>
+        <circle cx="250" cy="346" r="5" fill="#3dcca8"/>
+        <text class="a-tx" x="262" y="350" font-family="Syne, sans-serif" font-weight="700" font-size="11.5">AI agent · human-approved</text>
+        <text class="a-mu" x="248" y="372" font-size="10.5" font-weight="400">Read-only by default · fully logged</text>
+        <path d="M286 284 V 320" class="a-teal" stroke-width="1.4" stroke-dasharray="3 4"/>
       </g>
     </svg>
   </div>
@@ -671,7 +696,7 @@ footer{background:var(--bg2);border-top:.5px solid var(--b1);padding:1.75rem 4re
       <p class="sbody">Many critical public systems are decades old and still work. We protect what works, unlock its data, and replace components only when the business case is clear.</p>
     </div>
     <div class="hgrid g3 rv d1">
-      <div><span class="kicker">Step 01</span><h3 style="font-size:1.4rem;font-weight:800">Wrap</h3><p style="margin-bottom:1.25rem">Expose legacy data and transactions through a secure API gateway, without changing the core system.</p><ul class="ticks"><li>System and data inventory</li><li>SOAP to REST and mainframe adapters</li><li>Identity federation and monitoring</li></ul></div>
+      <div><span class="kicker">Step 01</span><h3 style="font-size:1.4rem;font-weight:800">Wrap</h3><p style="margin-bottom:1.25rem">Expose legacy data and transactions through a secure API and MCP gateway, without changing the core system.</p><ul class="ticks"><li>System and data inventory</li><li>SOAP to REST and mainframe adapters</li><li>MCP servers that let approved AI agents use legacy systems safely</li><li>Identity federation and monitoring</li></ul></div>
       <div><span class="kicker">Step 02</span><h3 style="font-size:1.4rem;font-weight:800">Extend</h3><p style="margin-bottom:1.25rem">Build modern public-facing and staff experiences, and AI assistants, on top of those APIs.</p><ul class="ticks"><li>Portals, mobile and chat channels</li><li>Event queues for outage resilience</li><li>Quick wins in 90 days</li></ul></div>
       <div><span class="kicker">Step 03</span><h3 style="font-size:1.4rem;font-weight:800">Replace</h3><p style="margin-bottom:1.25rem">Retire legacy components one at a time, behind stable interfaces the public never notices.</p><ul class="ticks"><li>Cloud-native or SaaS replacement</li><li>Data migration and validation</li><li>Vendor-neutral selection support</li></ul></div>
     </div>
